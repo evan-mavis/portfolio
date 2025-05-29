@@ -44,6 +44,11 @@ details:not([open]) > summary.main-heading {
   animation: bounce 3s ease infinite;
 }
 
+a {
+  color: rgb(163, 190, 221);
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
   line-height: 2em;
