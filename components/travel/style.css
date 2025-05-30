@@ -6,7 +6,6 @@ body {
 
 h1 {
   text-align: center;
-  color: black;
 }
 
 .image-container {
@@ -50,6 +49,18 @@ figcaption {
   border-radius: 5px;
   padding: 2px 5px;
   width: fit-content;
+}
+
+.line-segment {
+  border-bottom: 5px dashed red; /* Adjust thickness as needed */
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out; /* Increased duration to 1.5s */
+  height: 0px; /* added this line */
+}
+
+.line-segment.visible {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
