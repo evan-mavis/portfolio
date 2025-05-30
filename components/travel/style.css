@@ -1,0 +1,43 @@
+body {
+  background-color: #fffff0;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+img {
+  width: 450px;
+  height: auto;
+  margin: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: block;
+}
+
+.image-container img:nth-of-type(even) {
+  align-self: flex-end;
+}
+
+.image-container img:nth-of-type(4n + 1) {
+  align-self: center;
+}
+
+.image-container img:nth-of-type(4n + 2) {
+  align-self: flex-end;
+}
+
+.image-container img:nth-of-type(4n + 3) {
+  align-self: center;
+}
+
+.image-container img:nth-of-type(4n + 4) {
+  align-self: flex-start;
+}
