@@ -60,6 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         ctx.lineTo(cornerX, cornerY);
       }
+
+      // Add pin emoji
+      const pin = document.createElement("span");
+      pin.textContent = "📍"; // Tack emoji
+      pin.style.position = "absolute";
+      pin.style.left = `${cornerX}px`;
+      pin.style.top = `${cornerY}px`;
+      pin.style.fontSize = "3em"; // Adjust the size as needed
+      pin.style.transform = "translate(-50%, -85%)"; // Shift the tack
+      pin.style.zIndex = "2"; // Ensure it's above the line and images
+      imageContainer.appendChild(pin);
     });
 
     ctx.stroke();
