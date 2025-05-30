@@ -52,11 +52,11 @@ figcaption {
 }
 
 .line-segment {
-  border-bottom: 5px dashed red; /* Adjust thickness as needed */
+  border-bottom: 5px dashed red;
   position: absolute;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out; /* Increased duration to 1.5s */
-  height: 0px; /* added this line */
+  transition: opacity 1.5s ease-in-out;
+  height: 0px;
 }
 
 .line-segment.visible {
