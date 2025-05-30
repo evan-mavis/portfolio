@@ -16,6 +16,11 @@ img {
   height: auto;
   margin: 40px;
   border-radius: 8px;
+  transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+img:hover {
+  transform: scale(1.1); /* Scale the image on hover */
 }
 
 .image-container img:nth-of-type(even) {

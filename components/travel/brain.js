@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   ctx.setLineDash([5, 15]); // Set the dash pattern
 
   function drawLine() {
+    // Remove existing pins
+    const existingPins = document.querySelectorAll(".image-container span");
+    existingPins.forEach(pin => pin.remove());
+
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before redrawing
     ctx.beginPath();
 
@@ -35,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Determine a random corner
       let cornerX, cornerY;
-      const padding = 25; // Padding value
+      const padding = 20; // Padding value
       const corner = Math.floor(Math.random() * 4);
       switch (corner) {
         case 0: // Top-left
