@@ -84,3 +84,7 @@ figcaption {
     align-self: flex-start;
   }
 }
+
+p {
+  text-align: center;
+}
