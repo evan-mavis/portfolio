@@ -35,23 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Determine a random corner
       let cornerX, cornerY;
+      const padding = 25; // Padding value
       const corner = Math.floor(Math.random() * 4);
       switch (corner) {
         case 0: // Top-left
-          cornerX = x;
-          cornerY = y;
+          cornerX = x + padding;
+          cornerY = y + padding;
           break;
         case 1: // Top-right
-          cornerX = x + width;
-          cornerY = y;
+          cornerX = x + width - padding;
+          cornerY = y + padding;
           break;
         case 2: // Bottom-left
-          cornerX = x;
-          cornerY = y + height;
+          cornerX = x + padding;
+          cornerY = y + height - padding;
           break;
         case 3: // Bottom-right
-          cornerX = x + width;
-          cornerY = y + height;
+          cornerX = x + width - padding;
+          cornerY = y + height - padding;
           break;
       }
 
