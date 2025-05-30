@@ -5,11 +5,10 @@ body {
 .image-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  position: relative;
+  position: relative; /* Add this line */
 }
 
 img {
@@ -17,9 +16,6 @@ img {
   height: auto;
   margin: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  display: block;
 }
 
 .image-container img:nth-of-type(even) {
