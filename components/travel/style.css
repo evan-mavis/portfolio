@@ -1,5 +1,12 @@
 body {
   background-color: #fffff0;
+  font-family: monospace, monospace;
+  color: grey;
+}
+
+h1 {
+  text-align: center;
+  color: black;
 }
 
 .image-container {
@@ -8,37 +15,61 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  position: relative; /* Add this line */
+  position: relative;
+}
+
+figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 60px;
+  z-index: 1;
+}
+
+figure:first-of-type {
+  margin-top: 0;
+}
+
+figure:hover {
+  transform: scale(1.1);
 }
 
 img {
   width: 450px;
   height: auto;
-  margin: 40px;
   border-radius: 8px;
-  transition: transform 0.3s ease; /* Add transition for smooth animation */
+  transition: transform 0.3s ease;
 }
 
-img:hover {
-  transform: scale(1.1); /* Scale the image on hover */
+figcaption {
+  font-size: 1rem;
+  margin-top: 5px;
+  background-color: rgba(195, 201, 207, 0.8);
+  border-radius: 5px;
+  padding: 2px 5px;
+  width: fit-content;
 }
 
-.image-container img:nth-of-type(even) {
-  align-self: flex-end;
-}
+@media (min-width: 768px) {
+  figure:nth-of-type(even) {
+    align-self: flex-end;
+  }
 
-.image-container img:nth-of-type(4n + 1) {
-  align-self: center;
-}
+  figure:nth-of-type(4n + 1) {
+    align-self: center;
+  }
 
-.image-container img:nth-of-type(4n + 2) {
-  align-self: flex-end;
-}
+  figure:nth-of-type(4n + 2) {
+    align-self: flex-end;
+  }
 
-.image-container img:nth-of-type(4n + 3) {
-  align-self: center;
-}
+  figure:nth-of-type(4n + 3) {
+    align-self: center;
+  }
 
-.image-container img:nth-of-type(4n + 4) {
-  align-self: flex-start;
+  figure:nth-of-type(4n + 4) {
+    align-self: flex-start;
+  }
 }
