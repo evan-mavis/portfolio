@@ -52,56 +52,50 @@ h3 {
 .tier-items {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap;
   width: 100%;
   padding: 5px;
-  min-height: 90px; /* Ensure there's always some height to drop into */
+  min-height: 90px;
 }
 
 .item {
   margin: 5px;
   cursor: grab;
-  transition: margin 0.2s ease; /* Add transition for smooth effect */
+  transition: margin 0.2s ease;
 }
 
 .item img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
   border-radius: 8px;
-  transition: all 0.3s ease; /* Add transition for smooth resizing */
+  transition: all 0.3s ease;
 }
 
 .item img.enlarged {
-  width: 300px; /* Adjust as needed */
-  height: 300px; /* Adjust as needed */
+  width: 300px;
+  height: 300px;
   border-radius: 16px;
   position: relative;
-  z-index: 10; /* Ensure it's on top of other elements */
+  z-index: 10;
 }
 
 .image-caption {
   text-align: center;
   font-style: italic;
-  color: #eee;
+  color: rgb(181, 205, 181);
   margin-top: 5px;
 }
 
 .item.dragging {
-  opacity: 0.5; /* Make the item transparent during drag */
+  opacity: 0.5;
 }
 
 .tier-items.drag-over {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Highlight the drop area during drag over */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .tier-items.drag-over .item:not(.dragging) {
-  margin: 5px 5px; /* Adjust margin when dragging over */
+  margin: 10px 10px;
 }
 
 .tier-row.tier-s div.tier-header {
