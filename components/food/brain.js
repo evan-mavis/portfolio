@@ -1,159 +1,11 @@
 const sTierImages = [
   {
-    src: "../../assets/imgs/food/bali-ubud-breakfast-scramble.jpeg",
-    alt: "Chili Egg Scramble - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-chili-fries.jpeg",
-    alt: "Chili Fries - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-dragon-fruit-bfast-bowl.jpeg",
-    alt: "Dragon Fruit Breakfast Bowl - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-chili-noodles.jpeg",
-    alt: "Chili Noodles - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-indian.jpeg",
-    alt: "Tikka Masala - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-mie-goreng.jpeg",
-    alt: "Mie Goreng - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-pad-thai.jpeg",
-    alt: "Pad Thai - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-ubud-thai-stir-fry.jpeg",
-    alt: "Chicken Stir Fry - Ubud, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-beef-noodles.jpeg",
-    alt: "Beef Noodles - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-breakfast.jpeg",
-    alt: "Egg Breakfast - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-coconut.jpeg",
-    alt: "Coconut - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-dragon-fruit-smoothie.jpeg",
-    alt: "Dragon Fruit Smoothie - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-green-curry.jpeg",
-    alt: "Dragon Green Curry - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-mie-goreng-and-pork-buns.jpeg",
-    alt: "Mie Goreng and Pork Buns - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-mie-goreng.jpeg",
-    alt: "Mie Goreng - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-pork-bao-buns.jpeg",
-    alt: "Pork Bao Buns - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/bali-uluwatu-potstickers.jpeg",
-    alt: "Potstickers - Uluwatu, Bali",
-  },
-  {
-    src: "../../assets/imgs/food/japan-kyoto-cold-soba-and-tempura.jpeg",
-    alt: "Cold Soba and Tempura - Kyoto, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-kyoto-conveyor-belt-sushi.jpeg",
-    alt: "Conveyor Belt Sushi - Kyoto, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-kyoto-potstickers.jpeg",
-    alt: "Potstickers - Kyoto, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-kyoto-ramen.jpeg",
-    alt: "Ramen - Kyoto, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-kyoto-ramen-2.jpeg",
-    alt: "Ramen - Kyoto, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-kyoto-wagyu-night.jpeg",
-    alt: "Wagyu Night! - Kyoto, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-7-11-rice-roll.jpeg",
-    alt: "7-11 Rice Roll - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-a5-kobe-wagyu-skewers.jpeg",
-    alt: "A5 Kobe Wagyu Skewers - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-cold-breakfast-noodles.jpeg",
-    alt: "Cold Breakfast Noodles - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-dumplings.jpeg",
-    alt: "Dumplings - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-fatty-toro.jpeg",
-    alt: "Fatty Toro - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-nigiri.jpeg",
-    alt: "Nigiri - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-okonomiyaki.jpeg",
-    alt: "Okonomiyaki - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-osaka-piplup-ice-cream.jpeg",
-    alt: "Ice Cream - Osaka, Japan",
-  },
-  {
     src: "../../assets/imgs/food/japan-osaka-scallop.jpeg",
     alt: "Scallop - Osaka, Japan",
   },
   {
-    src: "../../assets/imgs/food/japan-osaka-takoyaki.jpeg",
-    alt: "Takoyaki - Osaka, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-tokyo-ichiran.jpeg",
-    alt: "Ichiran Ramen - Tokyo, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-tokyo-nigiri.jpeg",
-    alt: "Nigiri - Tokyo, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-tokyo-omakase-unagi.jpeg",
-    alt: "Omakase, Unagi - Tokyo, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-tokyo-ramen.jpeg",
-    alt: "Ramen - Tokyo, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-tokyo-real-wasabi.jpeg",
-    alt: "Real Wasabi - Tokyo, Japan",
-  },
-  {
-    src: "../../assets/imgs/food/japan-tokyo-taiyaki.jpeg",
-    alt: "Taiyaki - Tokyo, Japan",
+    src: "../../assets/imgs/food/japan-kyoto-ramen.jpeg",
+    alt: "Ramen - Kyoto, Japan",
   },
   {
     src: "../../assets/imgs/food/japan-tokyo-tuna-market.jpeg",
@@ -164,84 +16,28 @@ const sTierImages = [
     alt: "Wagyu Beef - Tokyo, Japan",
   },
   {
-    src: "../../assets/imgs/food/south-korea-hotpot.jpeg",
-    alt: "Hotpot - South Korea",
+    src: "../../assets/imgs/food/japan-osaka-a5-kobe-wagyu-skewers.jpeg",
+    alt: "A5 Kobe Wagyu Skewers - Osaka, Japan",
   },
   {
-    src: "../../assets/imgs/food/vietnam-hanoi-beef-and-veg.jpeg",
-    alt: "Beef and Veg - Hanoi, Vietnam",
+    src: "../../assets/imgs/food/bali-ubud-dragon-fruit-bfast-bowl.jpeg",
+    alt: "Dragon Fruit Breakfast Bowl - Ubud, Bali",
   },
   {
-    src: "../../assets/imgs/food/vietnam-hanoi-chili-chicken.jpeg",
-    alt: "Chili Chicken - Hanoi, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hanoi-cobra.jpeg",
-    alt: "Cobra - Hanoi, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hanoi-pho.jpeg",
-    alt: "Pho - Hanoi, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hanoi-rich-dipping-noodles.jpeg",
-    alt: "Rich Dipping Noodles - Hanoi, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hanoi-snake-spring-rolls.jpeg",
-    alt: "Bamboo Snake Spring Rolls - Hanoi, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hanoi-spring-rolls.jpeg",
-    alt: "Spring Rolls - Hanoi, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-ho-chi-minh-banh-mi-2.jpeg",
-    alt: "Banh Mi - Ho Chi Minh City, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-ho-chi-minh-banh-mi.jpeg",
-    alt: "Banh Mi - Ho Chi Minh City, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-ho-chi-minh-heart-meat.jpeg",
-    alt: "Noodles w/ Heart Meat - Ho Chi Minh City, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-ho-chi-minh-pho-cau.jpeg",
-    alt: "Pho Cau - Ho Chi Minh City, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-ho-chi-minh-pho-dau.jpeg",
-    alt: "Pho Dau - Ho Chi Minh City, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-ho-chi-minh-street-food.jpeg",
-    alt: "Street Food - Ho Chi Minh City, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hoi-an-banh-mi.jpeg",
-    alt: "Banh Mi - Hoi An, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hoi-an-beef-noodle-soup.jpeg",
-    alt: "Beef Noodle Soup - Hoi An, Vietnam",
+    src: "../../assets/imgs/food/japan-osaka-fatty-toro.jpeg",
+    alt: "Fatty Toro - Osaka, Japan",
   },
   {
     src: "../../assets/imgs/food/vietnam-hoi-an-cao-lau-noodles.jpeg",
     alt: "Cao Lau Noodles - Hoi An, Vietnam",
   },
   {
-    src: "../../assets/imgs/food/vietnam-hoi-an-spring-rolls.jpeg",
-    alt: "Spring Rolls - Hoi An, Vietnam",
+    src: "../../assets/imgs/food/bali-uluwatu-mie-goreng-and-pork-buns.jpeg",
+    alt: "Mie Goreng and Pork Buns - Uluwatu, Bali",
   },
   {
-    src: "../../assets/imgs/food/vietnam-hoi-an-white-rose-dumplings.jpeg",
-    alt: "White Rose Dumplings - Hoi An, Vietnam",
-  },
-  {
-    src: "../../assets/imgs/food/vietnam-hoi-an-white-rose-dumplings-2.jpeg",
-    alt: "White Rose Dumplings - Hoi An, Vietnam",
+    src: "../../assets/imgs/food/japan-tokyo-ramen.jpeg",
+    alt: "Ramen - Tokyo, Japan",
   },
   {
     src: "../../assets/imgs/food/vietnam-tam-coc-indian.jpeg",
@@ -249,11 +45,224 @@ const sTierImages = [
   },
 ];
 
-const aTierImages = [];
-const bTierImages = [];
-const cTierImages = [];
-const dTierImages = [];
-const fTierImages = [];
+const aTierImages = [
+  {
+    src: "../../assets/imgs/food/japan-kyoto-wagyu-night.jpeg",
+    alt: "Wagyu Night! - Kyoto, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/bali-ubud-breakfast-scramble.jpeg",
+    alt: "Chili Egg Scramble - Ubud, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-nigiri.jpeg",
+    alt: "Nigiri - Osaka, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-potstickers.jpeg",
+    alt: "Potstickers - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-tokyo-omakase-unagi.jpeg",
+    alt: "Omakase, Unagi - Tokyo, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/japan-tokyo-nigiri.jpeg",
+    alt: "Nigiri - Tokyo, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-dumplings.jpeg",
+    alt: "Dumplings - Osaka, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-ho-chi-minh-pho-dau.jpeg",
+    alt: "Pho Dau - Ho Chi Minh City, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-rich-dipping-noodles.jpeg",
+    alt: "Rich Dipping Noodles - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-mie-goreng.jpeg",
+    alt: "Mie Goreng - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-kyoto-ramen-2.jpeg",
+    alt: "Ramen - Kyoto, Japan",
+  },
+];
+
+const bTierImages = [
+  {
+    src: "../../assets/imgs/food/bali-ubud-indian.jpeg",
+    alt: "Tikka Masala - Ubud, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-kyoto-cold-soba-and-tempura.jpeg",
+    alt: "Cold Soba and Tempura - Kyoto, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/japan-tokyo-ichiran.jpeg",
+    alt: "Ichiran Ramen - Tokyo, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-cold-breakfast-noodles.jpeg",
+    alt: "Cold Breakfast Noodles - Osaka, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-ho-chi-minh-pho-cau.jpeg",
+    alt: "Pho Cau - Ho Chi Minh City, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/south-korea-hotpot.jpeg",
+    alt: "Hotpot - South Korea",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hoi-an-white-rose-dumplings.jpeg",
+    alt: "White Rose Dumplings - Hoi An, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/japan-kyoto-potstickers.jpeg",
+    alt: "Potstickers - Kyoto, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-green-curry.jpeg",
+    alt: "Green Curry - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-pho.jpeg",
+    alt: "Pho - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/bali-ubud-thai-stir-fry.jpeg",
+    alt: "Chicken Stir Fry - Ubud, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/bali-ubud-mie-goreng.jpeg",
+    alt: "Mie Goreng - Ubud, Bali",
+  },
+];
+
+const cTierImages = [
+  {
+    src: "../../assets/imgs/food/vietnam-hoi-an-white-rose-dumplings-2.jpeg",
+    alt: "White Rose Dumplings - Hoi An, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/japan-kyoto-conveyor-belt-sushi.jpeg",
+    alt: "Conveyor Belt Sushi - Kyoto, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/bali-ubud-pad-thai.jpeg",
+    alt: "Pad Thai - Ubud, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-chili-chicken.jpeg",
+    alt: "Chili Chicken - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-beef-and-veg.jpeg",
+    alt: "Beef and Veg - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hoi-an-spring-rolls.jpeg",
+    alt: "Spring Rolls - Hoi An, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/japan-tokyo-taiyaki.jpeg",
+    alt: "Taiyaki - Tokyo, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-spring-rolls.jpeg",
+    alt: "Spring Rolls - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-beef-noodles.jpeg",
+    alt: "Beef Noodles - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/bali-ubud-chili-noodles.jpeg",
+    alt: "Chili Noodles - Ubud, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hoi-an-beef-noodle-soup.jpeg",
+    alt: "Beef Noodle Soup - Hoi An, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-pork-bao-buns.jpeg",
+    alt: "Pork Bao Buns - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-okonomiyaki.jpeg",
+    alt: "Okonomiyaki - Osaka, Japan",
+  },
+];
+
+const dTierImages = [
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-dragon-fruit-smoothie.jpeg",
+    alt: "Dragon Fruit Smoothie - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hoi-an-banh-mi.jpeg",
+    alt: "Banh Mi - Hoi An, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/bali-ubud-chili-fries.jpeg",
+    alt: "Chili Fries - Ubud, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-takoyaki.jpeg",
+    alt: "Takoyaki - Osaka, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/japan-tokyo-real-wasabi.jpeg",
+    alt: "Real Wasabi - Tokyo, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-ho-chi-minh-banh-mi.jpeg",
+    alt: "Banh Mi - Ho Chi Minh City, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-ho-chi-minh-banh-mi-2.jpeg",
+    alt: "Banh Mi - Ho Chi Minh City, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-breakfast.jpeg",
+    alt: "Egg Breakfast - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/bali-uluwatu-coconut.jpeg",
+    alt: "Coconut - Uluwatu, Bali",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-7-11-rice-roll.jpeg",
+    alt: "7-11 Rice Roll - Osaka, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/japan-osaka-piplup-ice-cream.jpeg",
+    alt: "Ice Cream - Osaka, Japan",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-ho-chi-minh-street-food.jpeg",
+    alt: "Street Food - Ho Chi Minh City, Vietnam",
+  },
+];
+
+const fTierImages = [
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-cobra.jpeg",
+    alt: "Cobra - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-hanoi-snake-spring-rolls.jpeg",
+    alt: "Bamboo Snake Spring Rolls - Hanoi, Vietnam",
+  },
+  {
+    src: "../../assets/imgs/food/vietnam-ho-chi-minh-heart-meat.jpeg",
+    alt: "Noodles w/ Heart Meat - Ho Chi Minh City, Vietnam",
+  },
+];
 
 const tierMap = {
   "tier-s": sTierImages,
@@ -351,7 +360,7 @@ function dragOver(e) {
   e.preventDefault();
   this.classList.add("drag-over");
 
-  const afterElement = getDragAfterElement(this, e.clientX);
+  const afterElement = getDragAfterElement(this, e.clientX, e.clientY);
   const items = this.querySelectorAll(".item:not(.dragging)");
 
   // Reset margins for all items
@@ -393,7 +402,7 @@ function drop(e) {
     item.style.marginRight = "5px";
   });
 
-  const afterElement = getDragAfterElement(this, e.clientX);
+  const afterElement = getDragAfterElement(this, e.clientX, e.clientY);
   if (afterElement == null) {
     this.appendChild(draggedItem);
   } else {
@@ -405,7 +414,7 @@ function drop(e) {
   draggedItem = null;
 }
 
-function getDragAfterElement(container, x) {
+function getDragAfterElement(container, x, y) {
   const draggableElements = [
     ...container.querySelectorAll(".item:not(.dragging)"),
   ];
@@ -413,14 +422,18 @@ function getDragAfterElement(container, x) {
   return draggableElements.reduce(
     (closest, child) => {
       const box = child.getBoundingClientRect();
-      const offset = x - box.left - box.width / 2;
-      if (offset < 0 && offset > closest.offset) {
-        return { offset: offset, element: child };
-      } else {
-        return closest;
+      const offsetX = x - box.left - box.width / 2;
+      const offsetY = y - box.top - box.height / 2;
+
+      // Prioritize elements on the same line
+      if (offsetY > -box.height / 2 && offsetY < box.height / 2) {
+        if (offsetX < 0 && offsetX > closest.offset) {
+          return { offset: offsetX, element: child };
+        }
       }
+      return closest;
     },
-    { offset: Number.NEGATIVE_INFINITY }
+    { offset: Number.NEGATIVE_INFINITY, element: null }
   ).element;
 }
 
