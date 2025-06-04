@@ -132,6 +132,7 @@ ul summary:hover {
 
 dialog {
   opacity: 0;
+  background-color: gold;
   transition: opacity 1s ease;
 }
 
