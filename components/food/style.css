@@ -121,3 +121,18 @@ h3 {
 .tier-row.tier-f div.tier-header {
   background-color: rgb(165, 147, 165);
 }
+
+.back-button {
+  color: rgb(42, 42, 42);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.back-button:hover {
+  color: rgb(163, 190, 221);
+}
