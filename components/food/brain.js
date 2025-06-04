@@ -274,7 +274,6 @@ const tierMap = {
 };
 
 function loadImages() {
-  console.log(tierMap); // Log the tierMap to the console for debugging
   let imagesLoaded = 0;
   const totalImages = Object.values(tierMap).flat().length;
 
@@ -285,17 +284,19 @@ function loadImages() {
     imageArray.forEach((imageObj) => {
       const item = document.createElement("div");
       item.classList.add("item");
+
       const img = document.createElement("img");
       img.src = imageObj.src;
-      img.alt = imageObj.alt; // Set alt attribute
-      img.draggable = false; // Disable draggable here, enable after load
+      img.alt = imageObj.alt;
+      img.draggable = false;
+
       img.onload = () => {
         imagesLoaded++;
         if (imagesLoaded === totalImages) {
-          // All images are loaded, now add event listeners
           addEventListeners();
         }
       };
+
       item.appendChild(img);
       tierItems.appendChild(item);
     });
@@ -307,9 +308,9 @@ function addEventListeners() {
   const tiers = document.querySelectorAll(".tier-items");
 
   items.forEach((item) => {
-    item.draggable = true; // Enable draggable here
+    item.draggable = true;
     item.addEventListener("dragstart", dragStart);
-    item.addEventListener("dragend", dragEnd); // Add dragend listener
+    item.addEventListener("dragend", dragEnd);
   });
 
   tiers.forEach((tier) => {
@@ -319,29 +320,10 @@ function addEventListeners() {
     tier.addEventListener("drop", drop);
   });
 
-  // Add double click listener to each image
   const images = document.querySelectorAll(".item img");
   images.forEach((img) => {
     img.addEventListener("dblclick", enlargeImage);
   });
-}
-
-function enlargeImage(e) {
-  const img = e.target;
-  img.classList.toggle("enlarged");
-
-  // Create or remove caption
-  if (img.classList.contains("enlarged")) {
-    const caption = document.createElement("div");
-    caption.classList.add("image-caption");
-    caption.textContent = img.alt || "No caption available"; // Use alt text or default message
-    img.parentNode.appendChild(caption); // Add caption after the image
-  } else {
-    const caption = img.parentNode.querySelector(".image-caption");
-    if (caption) {
-      caption.remove(); // Remove caption if it exists
-    }
-  }
 }
 
 let draggedItem = null;
@@ -349,11 +331,24 @@ let draggedItem = null;
 function dragStart(e) {
   draggedItem = this;
   const img = this.querySelector("img");
+
   if (img) {
-    e.dataTransfer.setData("text/plain", "dragging"); // Simple text data
-    e.dataTransfer.setDragImage(img, 0, 0); // Use the image as the drag image
+    e.dataTransfer.setData("text/plain", "dragging");
+    e.dataTransfer.setDragImage(img, 0, 0);
   }
-  this.classList.add("dragging"); // Add a class for styling during drag
+
+  this.classList.add("dragging");
+}
+
+function dragEnd() {
+  const tiers = document.querySelectorAll(".tier-items");
+  tiers.forEach((tier) => {
+    tier.classList.remove("drag-over");
+  });
+
+  if (draggedItem) {
+    draggedItem.classList.remove("dragging");
+  }
 }
 
 function dragOver(e) {
@@ -363,21 +358,45 @@ function dragOver(e) {
   const afterElement = getDragAfterElement(this, e.clientX, e.clientY);
   const items = this.querySelectorAll(".item:not(.dragging)");
 
-  // Reset margins for all items
+  // reset margins for all items
   items.forEach((item) => {
     item.style.marginLeft = "5px";
     item.style.marginRight = "5px";
   });
 
   if (afterElement == null) {
-    // If dragged item is at the end, no change needed as the item will be appended
+    // if dragged item is at the end, no change needed as the item will be appended
   } else if (afterElement === items[0]) {
-    // If dragged item is at the beginning
+    // if dragged item is at the beginning
     afterElement.style.marginLeft = "15px";
   } else {
-    // If dragged item is in the middle
+    // if dragged item is in the middle
     afterElement.style.marginLeft = "15px";
   }
+}
+
+function getDragAfterElement(container, x, y) {
+  const draggableElements = [
+    ...container.querySelectorAll(".item:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offsetX = x - box.left - box.width / 2;
+      const offsetY = y - box.top - box.height / 2;
+
+      // prioritize elements on the same line
+      if (offsetY > -box.height / 2 && offsetY < box.height / 2) {
+        if (offsetX < 0 && offsetX > closest.offset) {
+          return { offset: offsetX, element: child };
+        }
+      }
+
+      return closest;
+    },
+    { offset: Number.NEGATIVE_INFINITY, element: null }
+  ).element;
 }
 
 function dragEnter(e) {
@@ -387,7 +406,7 @@ function dragEnter(e) {
 
 function dragLeave(e) {
   this.classList.remove("drag-over");
-  // Reset margins for all items
+
   this.querySelectorAll(".item:not(.dragging)").forEach((item) => {
     item.style.marginLeft = "5px";
     item.style.marginRight = "5px";
@@ -396,7 +415,8 @@ function dragLeave(e) {
 
 function drop(e) {
   this.classList.remove("drag-over");
-  // Reset margins for all items
+
+  // reset margins for all items
   this.querySelectorAll(".item:not(.dragging)").forEach((item) => {
     item.style.marginLeft = "5px";
     item.style.marginRight = "5px";
@@ -414,45 +434,29 @@ function drop(e) {
   draggedItem = null;
 }
 
-function getDragAfterElement(container, x, y) {
-  const draggableElements = [
-    ...container.querySelectorAll(".item:not(.dragging)"),
-  ];
-
-  return draggableElements.reduce(
-    (closest, child) => {
-      const box = child.getBoundingClientRect();
-      const offsetX = x - box.left - box.width / 2;
-      const offsetY = y - box.top - box.height / 2;
-
-      // Prioritize elements on the same line
-      if (offsetY > -box.height / 2 && offsetY < box.height / 2) {
-        if (offsetX < 0 && offsetX > closest.offset) {
-          return { offset: offsetX, element: child };
-        }
-      }
-      return closest;
-    },
-    { offset: Number.NEGATIVE_INFINITY, element: null }
-  ).element;
-}
-
 function updateImageArrays() {
   for (const tier in tierMap) {
     const tierItems = document.querySelector(`.${tier} .tier-items`);
     const imageElements = tierItems.querySelectorAll(".item img");
     tierMap[tier] = Array.from(imageElements).map((img) => img.src);
   }
-  console.log(tierMap); // Log the updated tierMap to the console
 }
 
-function dragEnd() {
-  const tiers = document.querySelectorAll(".tier-items");
-  tiers.forEach((tier) => {
-    tier.classList.remove("drag-over");
-  });
-  if (draggedItem) {
-    draggedItem.classList.remove("dragging");
+function enlargeImage(e) {
+  const img = e.target;
+  img.classList.toggle("enlarged");
+
+  // Create or remove caption
+  if (img.classList.contains("enlarged")) {
+    const caption = document.createElement("div");
+    caption.classList.add("image-caption");
+    caption.textContent = img.alt || "No caption available";
+    img.parentNode.appendChild(caption);
+  } else {
+    const caption = img.parentNode.querySelector(".image-caption");
+    if (caption) {
+      caption.remove();
+    }
   }
 }
 
