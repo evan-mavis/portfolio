@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
       img.onload();
     }
   });
+
+  // scroll to top on load
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+  });
 });
 
 function updateLines({ imageContainer, images, observer }) {
