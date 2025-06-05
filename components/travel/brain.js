@@ -28,7 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", debouncedUpdate);
 
-  updateLines({ imageContainer, images, observer });
+  let imagesLoaded = 0;
+  images.forEach((img) => {
+    img.onload = () => {
+      imagesLoaded++;
+      if (imagesLoaded === images.length) {
+        updateLines({ imageContainer, images, observer });
+      }
+    };
+
+    // handle cases where images are already cached
+    if (img.complete) {
+      img.onload();
+    }
+  });
 });
 
 function updateLines({ imageContainer, images, observer }) {
