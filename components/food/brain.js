@@ -329,6 +329,10 @@ function addEventListeners() {
 let draggedItem = null;
 
 function dragStart(e) {
+  // prevent default drag behavior on mobile
+  if (window.innerWidth < 768) {
+    e.preventDefault();
+  }
   draggedItem = this;
   const img = this.querySelector("img");
 
