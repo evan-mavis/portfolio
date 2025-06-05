@@ -40,10 +40,6 @@ details:not([open]) > summary.main-heading {
   color: transparent;
 }
 
-.bio__cu-highlight.bounce {
-  animation: bounce 3s ease infinite;
-}
-
 a {
   color: rgb(163, 190, 221);
   text-decoration: none;
@@ -128,18 +124,4 @@ ul summary:hover {
   60% {
     transform: translateY(-5px);
   }
-}
-
-dialog {
-  opacity: 0;
-  background-color: gold;
-  transition: opacity 1s ease;
-}
-
-dialog.fade-in {
-  opacity: 1;
-}
-
-dialog.fade-out {
-  opacity: 0;
 }
