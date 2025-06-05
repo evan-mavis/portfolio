@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.style.zIndex = "-1";
   imageContainer.appendChild(canvas);
 
-  const ctx = canvas.getContext("2d");
-
   resizeCanvas({ imageContainer, canvas });
 
   const observer = createIntersectionObserver(imageContainer, images);
@@ -45,14 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function updateLines({ imageContainer, images, observer }) {
-  // Clear existing lines
+  // clear existing lines
   const existingLines = imageContainer.querySelectorAll(".line-segment");
   existingLines.forEach((line) => line.remove());
 
-  // Clear existing pins
+  // clear existing pins
   resetPins(imageContainer);
 
-  // Calculate line segments
+  // calculate line segments
   let lineSegments = [];
   let cornerPositions = [];
 
@@ -75,7 +73,7 @@ function updateLines({ imageContainer, images, observer }) {
     }
   });
 
-  // Create line elements and add them to the container
+  // create line elements and add them to the container
   lineSegments.forEach((segment, index) => {
     const line = document.createElement("div");
     line.classList.add("line-segment");
@@ -113,7 +111,7 @@ function createIntersectionObserver(imageContainer, images) {
           const img = entry.target;
           const index = Array.from(images).indexOf(img);
 
-          // Make the corresponding line segment visible
+          // make the corresponding line segment visible
           if (index > 0) {
             const line = imageContainer.querySelector(
               `.line-segment[data-index="${index - 1}"]`
