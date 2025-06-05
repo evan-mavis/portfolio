@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   }, 100);
 
-  window.addEventListener("resize", debouncedUpdate);
+  // conditionally add resize event listener based on screen width
+  if (window.innerWidth >= 768) {
+    window.addEventListener("resize", debouncedUpdate);
+  }
 
   let imagesLoaded = 0;
   images.forEach((img) => {
