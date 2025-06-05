@@ -338,6 +338,11 @@ function dragStart(e) {
   }
 
   this.classList.add("dragging");
+
+  if (window.innerWidth <= 768) {
+    // prevent default drag behavior on touch devices
+    e.preventDefault();
+  }
 }
 
 function dragEnd() {
