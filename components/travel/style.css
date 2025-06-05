@@ -103,3 +103,15 @@ p {
 .back-button:hover {
   color: rgb(163, 190, 221);
 }
+
+@media (max-width: 767px) {
+  figure:hover {
+    transform: none;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
