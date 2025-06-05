@@ -446,7 +446,7 @@ function enlargeImage(e) {
   const img = e.target;
   img.classList.toggle("enlarged");
 
-  // Create or remove caption
+  // create or remove caption
   if (img.classList.contains("enlarged")) {
     const caption = document.createElement("div");
     caption.classList.add("image-caption");
