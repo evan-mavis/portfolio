@@ -11,6 +11,14 @@ body {
   text-align: center;
 }
 
+.mobile-text {
+  display: none;
+}
+
+.desktop-text {
+  display: block;
+}
+
 h2 > em {
   color: rgb(181, 205, 181);
 }
@@ -135,4 +143,42 @@ h3 {
 
 .back-button:hover {
   color: rgb(163, 190, 221);
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+
+  .tier-row {
+    flex-direction: column;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    height: auto;
+  }
+
+  .tier-header {
+    border-right: none;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+  }
+
+  .tier-items {
+    justify-content: center;
+  }
+
+  .mobile-text {
+    display: block;
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .desktop-text {
+    display: none;
+  }
 }
