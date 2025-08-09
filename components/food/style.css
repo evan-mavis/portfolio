@@ -1,7 +1,19 @@
+@font-face {
+  font-family: "PxPlus IBM VGA8";
+  src: url("../../fonts/PxPlus_IBM_VGA8.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  background-color: #5f5f5f;
-  font-family: monospace, monospace;
-  color: rgb(42, 42, 42);
+  background-color: #000000;
+  font-family: "PxPlus IBM VGA8", "Courier New", monospace;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+  font-size: 18px;
+  margin: 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -9,6 +21,10 @@ body {
 
 h1 {
   margin-top: 50px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  font-size: 2.2em;
+  font-weight: bold;
 }
 
 .header-text {
@@ -24,7 +40,8 @@ h1 {
 }
 
 h2 > em {
-  color: rgb(181, 205, 181);
+  color: #eeff00;
+  text-shadow: 0 0 8px #f2ff00;
 }
 
 h3 {
@@ -59,6 +76,8 @@ h3 {
   box-sizing: border-box;
   border-right: 3px solid black;
   padding: 0 60px;
+  color: black;
+  text-shadow: none;
 }
 
 .tier-items {
@@ -94,8 +113,9 @@ h3 {
 .image-caption {
   text-align: center;
   font-style: italic;
-  color: rgb(181, 205, 181);
+  color: white;
   margin-top: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .item.dragging {
@@ -135,7 +155,7 @@ h3 {
 }
 
 .back-button {
-  color: rgb(42, 42, 42);
+  color: #00ffff;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -143,10 +163,14 @@ h3 {
   z-index: 1000;
   text-decoration: none;
   font-size: 2rem;
+  text-shadow: 0 0 8px #00ffff;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .back-button:hover {
-  color: rgb(163, 190, 221);
+  color: #66ffff;
+  text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #0088ff;
 }
 
 @media (max-width: 767px) {
