@@ -10,7 +10,7 @@ body {
   background-color: #000000;
   font-family: "PxPlus IBM VGA8", "Courier New", monospace;
   color: #00ff00;
-  text-shadow: 0 0 5px #00ff00;
+  text-shadow: 0 0 3px #00ff00;
   font-size: 18px;
   margin: 0;
   padding: 20px;
@@ -20,7 +20,7 @@ h1 {
   text-align: center;
   margin-top: 50px;
   color: #00ff00;
-  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  text-shadow: 0 0 7px #00ff00, 0 0 12px #00ff00;
   font-size: 2.2em;
   font-weight: bold;
 }
@@ -67,7 +67,7 @@ figcaption {
   padding: 2px 5px;
   width: fit-content;
   color: #00ff00;
-  text-shadow: 0 0 5px #00ff00;
+  text-shadow: 0 0 3px #00ff00;
 }
 
 .line-segment {
@@ -117,14 +117,14 @@ p {
   z-index: 1000;
   text-decoration: none;
   font-size: 2rem;
-  text-shadow: 0 0 8px #00ffff;
+  text-shadow: 0 0 5px #00ffff;
   transition: all 0.3s ease;
   font-weight: bold;
 }
 
 .back-button:hover {
   color: #66ffff;
-  text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #0088ff;
+  text-shadow: 0 0 10px #00ffff, 0 0 15px #00ffff;
 }
 
 @media (max-width: 767px) {

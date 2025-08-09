@@ -12,7 +12,7 @@ body {
   background-color: #000000;
   margin: 0;
   padding: 20px;
-  text-shadow: 0 0 5px #00ff00;
+  text-shadow: 0 0 3px #00ff00;
   font-size: 18px;
 }
 
@@ -21,7 +21,7 @@ body {
   font-weight: bold;
   margin-bottom: 0.3em;
   color: #00ff00;
-  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  text-shadow: 0 0 7px #00ff00, 0 0 12px #00ff00;
 }
 
 details:not([open]) > summary.main-heading {
@@ -31,27 +31,27 @@ details:not([open]) > summary.main-heading {
 .bio {
   font-size: 1.3em;
   color: #00ff00;
-  text-shadow: 0 0 8px #00ff00;
+  text-shadow: 0 0 5px #00ff00;
 }
 
 .bio__cu-highlight {
   display: inline-block;
   color: gold;
   font-weight: bold;
-  text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px #ffaa00;
+  text-shadow: 0 0 6px gold, 0 0 12px gold;
 }
 
 a {
   color: #00ffff;
   text-decoration: none;
-  text-shadow: 0 0 8px #00ffff;
+  text-shadow: 0 0 5px #00ffff;
   transition: all 0.3s ease;
   font-weight: bold;
 }
 
 a:hover {
   color: #66ffff;
-  text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #0088ff;
+  text-shadow: 0 0 10px #00ffff, 0 0 15px #00ffff;
 }
 
 ul {
@@ -62,13 +62,13 @@ ul {
 summary {
   cursor: pointer;
   color: #00ff00;
-  text-shadow: 0 0 5px #00ff00;
+  text-shadow: 0 0 3px #00ff00;
   transition: all 0.3s ease;
 }
 
 summary:hover {
   color: #44ff44;
-  text-shadow: 0 0 15px #00ff00;
+  text-shadow: 0 0 10px #00ff00;
 }
 
 details > summary {
@@ -112,7 +112,7 @@ ul details[open] > summary {
   color: #88ff88;
   font-style: italic;
   transition: all 0.3s ease;
-  text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00, 0 0 45px #44ff44;
+  text-shadow: 0 0 10px #00ff00, 0 0 18px #00ff00;
   font-weight: bold;
 }
 
