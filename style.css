@@ -1,13 +1,27 @@
+@font-face {
+  font-family: "PxPlus IBM VGA8";
+  src: url("./fonts/PxPlus_IBM_VGA8.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  font-family: monospace, monospace;
-  color: black;
-  background-color: #5f5f5f;
+  font-family: "PxPlus IBM VGA8", "Courier New", monospace;
+  color: #00ff00;
+  background-color: #000000;
+  margin: 0;
+  padding: 20px;
+  text-shadow: 0 0 5px #00ff00;
+  font-size: 18px;
 }
 
 .main-heading {
-  font-size: 2em;
+  font-size: 2.2em;
   font-weight: bold;
   margin-bottom: 0.3em;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
 
 details:not([open]) > summary.main-heading {
@@ -15,27 +29,29 @@ details:not([open]) > summary.main-heading {
 }
 
 .bio {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  color: #00ff00;
+  text-shadow: 0 0 8px #00ff00;
 }
 
 .bio__cu-highlight {
   display: inline-block;
-  background-image: repeating-linear-gradient(
-    to right,
-    gold 0,
-    gold 1ch,
-    black 1ch,
-    black 2ch
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: gold;
+  font-weight: bold;
+  text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px #ffaa00;
 }
 
 a {
-  color: rgb(163, 190, 221);
+  color: #00ffff;
   text-decoration: none;
+  text-shadow: 0 0 8px #00ffff;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #66ffff;
+  text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #0088ff;
 }
 
 ul {
@@ -45,6 +61,14 @@ ul {
 
 summary {
   cursor: pointer;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+  transition: all 0.3s ease;
+}
+
+summary:hover {
+  color: #44ff44;
+  text-shadow: 0 0 15px #00ff00;
 }
 
 details > summary {
@@ -63,8 +87,8 @@ ul li::before {
   position: absolute;
   left: -10px;
   top: 0px;
-  border-left: 2px solid grey;
-  border-bottom: 2px solid grey;
+  border-left: 2px solid #00ff00;
+  border-bottom: 2px solid #00ff00;
   content: "";
   width: 8px;
   height: 1em;
@@ -74,7 +98,7 @@ ul li::after {
   position: absolute;
   left: -10px;
   bottom: 0px;
-  border-left: 2px solid grey;
+  border-left: 2px solid #00ff00;
   content: "";
   width: 8px;
   height: 100%;
@@ -85,22 +109,15 @@ ul li:last-child::after {
 }
 
 ul details[open] > summary {
-  color: rgb(181, 205, 181);
+  color: #88ff88;
   font-style: italic;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-ul details[open] > summary.name {
-  color: black;
+  text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00, 0 0 45px #44ff44;
+  font-weight: bold;
 }
 
 ul summary {
   transition: all 0.3s ease;
-}
-
-ul summary:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes bounce {
