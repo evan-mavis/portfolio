@@ -200,10 +200,7 @@ h3 {
 
   .mobile-text {
     display: block;
-    background-color: yellow;
-    color: black;
     padding: 10px;
-    border-radius: 5px;
   }
 
   .desktop-text {
