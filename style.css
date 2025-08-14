@@ -111,7 +111,7 @@ ul li:last-child::after {
 ul details[open] > summary {
   color: #88ff88;
   font-style: italic;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
   text-shadow: 0 0 10px #00ff00, 0 0 18px #00ff00;
   font-weight: bold;
 }
