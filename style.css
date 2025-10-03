@@ -28,12 +28,16 @@ body {
     radial-gradient(ellipse 700px 500px at 20% 90%, #2d0066 0%, transparent 50%),
     #0a0a0a;
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
   padding: 20px;
   text-shadow: 0 0 3px #00ff00;
   font-size: 18px;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body::before {
@@ -73,6 +77,10 @@ body::before {
       rgba(200, 100, 255, 0.08) 0%,
       transparent 60%
     );
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   pointer-events: none;
   z-index: -1;
 }
@@ -281,6 +289,37 @@ ul summary {
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
+  body {
+    color: #88ff88; /* Dimmer green for better mobile readability */
+    text-shadow: 0 0 2px #88ff88; /* Reduced glow on mobile */
+    font-size: 16px; /* Slightly smaller text on mobile */
+  }
+
+  .main-heading {
+    color: #88ff88;
+    text-shadow: 0 0 5px #88ff88;
+  }
+
+  .bio {
+    color: #88ff88;
+    text-shadow: 0 0 3px #88ff88;
+  }
+
+  summary {
+    color: #88ff88;
+    text-shadow: 0 0 2px #88ff88;
+  }
+
+  summary:hover {
+    color: #aaffaa;
+    text-shadow: 0 0 5px #88ff88;
+  }
+
+  ul details[open] > summary {
+    color: #bbffbb;
+    text-shadow: 0 0 5px #88ff88;
+  }
+
   .tech-icon {
     font-size: 0.9em;
     margin-right: 6px;
