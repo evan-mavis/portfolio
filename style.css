@@ -321,6 +321,26 @@ ul summary {
   .tech-icon:hover {
     transform: none; /* Disable scale on mobile for better touch experience */
   }
+
+  .bio__cu-highlight {
+    color: #b8860b; /* Much dimmer gold for mobile */
+    text-shadow: 0 0 1px #b8860b; /* Minimal glow on mobile */
+  }
+
+  a {
+    color: #9966cc; /* Dimmer purple for mobile */
+    text-shadow: 0 0 2px #9966cc; /* Reduced glow */
+  }
+
+  a:hover {
+    color: #b388d6; /* Dimmer purple hover */
+    text-shadow: 0 0 3px #9966cc; /* Minimal glow */
+  }
+
+  ul details[open] > summary {
+    color: #44ff44; /* Brighter neon green for selected items */
+    text-shadow: 0 0 3px #44ff44, 0 0 6px #44ff44; /* Enhanced neon glow */
+  }
 }
 
 @keyframes bounce {

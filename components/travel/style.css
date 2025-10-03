@@ -188,6 +188,19 @@ p {
   text-shadow: 0 0 5px #9966cc, 0 0 8px #9966cc;
 }
 
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .back-button {
+    color: #7a4d99; /* Even dimmer purple for mobile */
+    text-shadow: 0 0 2px #7a4d99; /* Minimal glow */
+  }
+
+  .back-button:hover {
+    color: #8b5aa6; /* Dimmer hover */
+    text-shadow: 0 0 3px #7a4d99; /* Minimal glow */
+  }
+}
+
 @media (max-width: 767px) {
   figure:hover {
     transform: none;
