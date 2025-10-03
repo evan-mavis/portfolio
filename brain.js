@@ -34,9 +34,9 @@ function restoreDetailsState() {
 document.addEventListener("DOMContentLoaded", function () {
   restoreDetailsState();
 
-  const OPEN_MS = 700; // opening duration (ms)
-  const CLOSE_MS = 220; // faster closing duration (ms)
-  let bulkMode = null; // 'expand' | 'collapse' | null
+  const OPEN_MS = 700;
+  const CLOSE_MS = 220;
+  let bulkMode = null;
   let pendingBulk = 0;
 
   function getContentElement(detailsEl) {
@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (detailsEl._animating) {
-      // Interrupt and continue opening from current height
       clearPending(detailsEl, content);
     }
     detailsEl._animating = true;
@@ -79,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
       : "0";
     content.style.transition = `max-height ${OPEN_MS}ms ease, opacity ${OPEN_MS}ms ease`;
 
-    // Set open so content becomes visible and measurable
     detailsEl.setAttribute("open", "");
 
     requestAnimationFrame(() => {
@@ -90,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (detailsEl._onEnd !== onEnd) return;
         content.removeEventListener("transitionend", onEnd);
         detailsEl._onEnd = null;
-        // Cleanup inline styles
         content.style.maxHeight = "";
         content.style.overflow = "";
         content.style.transition = "";
@@ -99,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
         detailsEl._animating = false;
         detailsEl._animDirection = null;
         saveDetailsState();
-        // Refresh toggle-all icon/title only if not in a bulk operation
         try {
           if (!bulkMode) updateToggleButton();
         } catch (_) {}
@@ -118,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (detailsEl._animating) {
-      // Interrupt and continue closing from current height
       clearPending(detailsEl, content);
     }
     detailsEl._animating = true;
@@ -151,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
         detailsEl._animating = false;
         detailsEl._animDirection = null;
         saveDetailsState();
-        // Handle bulk collapse bookkeeping to avoid icon flicker
         if (bulkMode === "collapse" && isBulk) {
           pendingBulk = Math.max(0, pendingBulk - 1);
           if (pendingBulk === 0) {
@@ -171,14 +165,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Intercept summary clicks to control animation for all folders
   document.querySelectorAll("details > summary").forEach((summary) => {
     summary.addEventListener("click", function (e) {
       e.preventDefault();
       const detailsEl = this.parentElement;
       const isOpen = detailsEl.hasAttribute("open");
       if (detailsEl._animating) {
-        // Interrupt current animation and reverse based on desired state
         if (detailsEl._animDirection === "open") {
           animateClose(detailsEl, true);
         } else if (detailsEl._animDirection === "close") {
@@ -192,7 +184,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Single toggle-all handler
+  // Avatar expand/collapse without toggling the summary
+  const avatar = document.querySelector(".main-heading__avatar");
+  if (avatar) {
+    avatar.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const overlay = document.getElementById("avatar-overlay");
+      if (!overlay) return;
+      overlay.classList.add("is-open");
+      const root = document.getElementById("page-root");
+      if (root) root.classList.add("is-blurred");
+    });
+  }
+
+  const overlay = document.getElementById("avatar-overlay");
+  if (overlay) {
+    function closeOverlay() {
+      overlay.classList.remove("is-open");
+      const root = document.getElementById("page-root");
+      if (root) root.classList.remove("is-blurred");
+    }
+
+    overlay.addEventListener("click", () => closeOverlay());
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeOverlay();
+    });
+  }
+
   const toggleBtn = document.getElementById("toggle-all");
 
   function getAllDetails() {
@@ -219,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       const expand = anyClosed();
-      // Immediately flip icon/title for snappy feedback
       const icon = toggleBtn.querySelector("iconify-icon");
       if (expand) {
         toggleBtn.title = "Collapse all";
@@ -229,12 +246,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (icon) icon.setAttribute("icon", "mdi:arrow-expand-all");
       }
       if (expand) {
-        // Expand instantly with global flag to disable transitions
         bulkMode = "expand";
         document.body.classList.add("instant-toggle");
         getAllDetails().forEach((d) => {
           const content = getContentElement(d);
-          // cancel any in-flight animations and clear inline styles that could cause flicker
           if (content) {
             clearPending(d, content);
             d._animating = false;
@@ -248,7 +263,6 @@ document.addEventListener("DOMContentLoaded", function () {
           d.setAttribute("open", "");
         });
         saveDetailsState();
-        // Remove flag after paint to keep the change instantaneous
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             document.body.classList.remove("instant-toggle");

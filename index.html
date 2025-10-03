@@ -11,359 +11,380 @@
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
   <body>
-    <div id="tree-controls" aria-label="Tree controls">
-      <button id="toggle-all" title="Expand all">
-        <iconify-icon icon="mdi:arrow-expand-all"></iconify-icon>
-      </button>
-    </div>
-    <ul>
-      <li>
-        <details>
-          <summary class="main-heading">
-            <iconify-icon
-              class="folder-icon folder-closed"
-              icon="mdi:folder"
-            ></iconify-icon
-            ><iconify-icon
-              class="folder-icon folder-open"
-              icon="mdi:folder-open"
-            ></iconify-icon
-            >evan mavis/
-          </summary>
-          <ul>
-            <li>
-              <details>
-                <summary class="bio">
-                  <iconify-icon
-                    class="folder-icon folder-closed"
-                    icon="mdi:folder"
-                  ></iconify-icon
-                  ><iconify-icon
-                    class="folder-icon folder-open"
-                    icon="mdi:folder-open"
-                  ></iconify-icon>
-                  full-stack web developer based out of NYC and a
-                  <span class="bio__cu-highlight">CU Boulder alum</span>/
-                </summary>
-                <ul>
-                  <li>
-                    <details>
-                      <summary>
-                        <iconify-icon
-                          class="folder-icon folder-closed"
-                          icon="mdi:folder"
-                        ></iconify-icon
-                        ><iconify-icon
-                          class="folder-icon folder-open"
-                          icon="mdi:folder-open"
-                        ></iconify-icon
-                        >current work stack/
-                      </summary>
-                      <ul>
-                        <li>
-                          <iconify-icon icon="logos:angular-icon"></iconify-icon
-                          >angular
-                        </li>
-                        <li>
-                          <iconify-icon icon="logos:dotnet"></iconify-icon
-                          >asp.net
-                        </li>
-                        <li>
-                          <iconify-icon icon="logos:postgresql"></iconify-icon
-                          >postgres
-                        </li>
-                        <li>
+    <div id="page-root">
+      <div id="tree-controls" aria-label="Tree controls">
+        <button id="toggle-all" title="Expand all">
+          <iconify-icon icon="mdi:arrow-expand-all"></iconify-icon>
+        </button>
+      </div>
+      <ul>
+        <li>
+          <details>
+            <summary class="main-heading">
+              <iconify-icon
+                class="folder-icon folder-closed"
+                icon="mdi:folder"
+              ></iconify-icon
+              ><iconify-icon
+                class="folder-icon folder-open"
+                icon="mdi:folder-open"
+              ></iconify-icon
+              >evan mavis/<img
+                class="main-heading__avatar"
+                src="./assets/imgs/avatar.png"
+                alt="profile avatar"
+              />
+            </summary>
+            <ul>
+              <li>
+                <details>
+                  <summary class="bio">
+                    <iconify-icon
+                      class="folder-icon folder-closed"
+                      icon="mdi:folder"
+                    ></iconify-icon
+                    ><iconify-icon
+                      class="folder-icon folder-open"
+                      icon="mdi:folder-open"
+                    ></iconify-icon>
+                    full-stack web developer based out of NYC and a
+                    <span class="bio__cu-highlight">CU Boulder alum</span>/
+                  </summary>
+                  <ul>
+                    <li>
+                      <details>
+                        <summary>
                           <iconify-icon
-                            icon="logos:microsoft-azure"
+                            class="folder-icon folder-closed"
+                            icon="mdi:folder"
                           ></iconify-icon
-                          >azure
-                        </li>
-                      </ul>
-                    </details>
-                  </li>
-                  <li>
-                    <details>
-                      <summary>
-                        <iconify-icon
-                          class="folder-icon folder-closed"
-                          icon="mdi:folder"
-                        ></iconify-icon
-                        ><iconify-icon
-                          class="folder-icon folder-open"
-                          icon="mdi:folder-open"
-                        ></iconify-icon
-                        >dream stack/
-                      </summary>
-                      <ul>
-                        <li>
-                          <iconify-icon icon="logos:react"></iconify-icon>react
-                        </li>
-                        <li>
+                          ><iconify-icon
+                            class="folder-icon folder-open"
+                            icon="mdi:folder-open"
+                          ></iconify-icon
+                          >current work stack/
+                        </summary>
+                        <ul>
+                          <li>
+                            <iconify-icon
+                              icon="logos:angular-icon"
+                            ></iconify-icon
+                            >angular
+                          </li>
+                          <li>
+                            <iconify-icon icon="logos:dotnet"></iconify-icon
+                            >asp.net
+                          </li>
+                          <li>
+                            <iconify-icon icon="logos:postgresql"></iconify-icon
+                            >postgres
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="logos:microsoft-azure"
+                            ></iconify-icon
+                            >azure
+                          </li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li>
+                      <details>
+                        <summary>
                           <iconify-icon
-                            icon="logos:typescript-icon"
+                            class="folder-icon folder-closed"
+                            icon="mdi:folder"
                           ></iconify-icon
-                          >typescript
-                        </li>
-                        <li>
-                          <iconify-icon icon="logos:vitejs"></iconify-icon>vite
-                        </li>
-                        <li>
-                          <iconify-icon
-                            icon="vscode-icons:file-type-shadcn"
+                          ><iconify-icon
+                            class="folder-icon folder-open"
+                            icon="mdi:folder-open"
                           ></iconify-icon
-                          >shadcn
-                        </li>
-                        <li>
-                          <iconify-icon
-                            icon="vscode-icons:file-type-tailwind"
-                          ></iconify-icon
-                          >tailwind
-                        </li>
-                        <li>
-                          <iconify-icon icon="logos:nodejs-icon"></iconify-icon
-                          >node.js
-                        </li>
-                        <li>
-                          <iconify-icon
-                            icon="skill-icons:expressjs-dark"
-                          ></iconify-icon
-                          >express.js
-                        </li>
-                        <li>
-                          <iconify-icon icon="logos:postgresql"></iconify-icon
-                          >postgres
-                        </li>
-                        <li>
-                          <iconify-icon icon="logos:neon-icon"></iconify-icon
-                          >neon
-                        </li>
-                        <li>
-                          <iconify-icon
-                            icon="skill-icons:vercel-light"
-                          ></iconify-icon
-                          >vercel
-                        </li>
-                        <li>
-                          <iconify-icon icon="devicon:railway"></iconify-icon
-                          >railway
-                        </li>
-                        <li>
-                          <iconify-icon icon="devicon:firebase"></iconify-icon
-                          >firebase
-                        </li>
-                      </ul>
-                    </details>
-                  </li>
+                          >dream stack/
+                        </summary>
+                        <ul>
+                          <li>
+                            <iconify-icon icon="logos:react"></iconify-icon
+                            >react
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="logos:typescript-icon"
+                            ></iconify-icon
+                            >typescript
+                          </li>
+                          <li>
+                            <iconify-icon icon="logos:vitejs"></iconify-icon
+                            >vite
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="vscode-icons:file-type-shadcn"
+                            ></iconify-icon
+                            >shadcn
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="vscode-icons:file-type-tailwind"
+                            ></iconify-icon
+                            >tailwind
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="logos:nodejs-icon"
+                            ></iconify-icon
+                            >node.js
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="skill-icons:expressjs-dark"
+                            ></iconify-icon
+                            >express.js
+                          </li>
+                          <li>
+                            <iconify-icon icon="logos:postgresql"></iconify-icon
+                            >postgres
+                          </li>
+                          <li>
+                            <iconify-icon icon="logos:neon-icon"></iconify-icon
+                            >neon
+                          </li>
+                          <li>
+                            <iconify-icon
+                              icon="skill-icons:vercel-light"
+                            ></iconify-icon
+                            >vercel
+                          </li>
+                          <li>
+                            <iconify-icon icon="devicon:railway"></iconify-icon
+                            >railway
+                          </li>
+                          <li>
+                            <iconify-icon icon="devicon:firebase"></iconify-icon
+                            >firebase
+                          </li>
+                        </ul>
+                      </details>
+                    </li>
 
-                  <li>
-                    <details>
-                      <summary>
-                        <iconify-icon
-                          class="folder-icon folder-closed"
-                          icon="mdi:folder"
-                        ></iconify-icon
-                        ><iconify-icon
-                          class="folder-icon folder-open"
-                          icon="mdi:folder-open"
-                        ></iconify-icon
-                        >other tech/
-                      </summary>
-                      <ul>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
+                    <li>
+                      <details>
+                        <summary>
+                          <iconify-icon
+                            class="folder-icon folder-closed"
+                            icon="mdi:folder"
+                          ></iconify-icon
+                          ><iconify-icon
+                            class="folder-icon folder-open"
+                            icon="mdi:folder-open"
+                          ></iconify-icon
+                          >other tech/
+                        </summary>
+                        <ul>
+                          <li>
+                            <details>
+                              <summary>
+                                <iconify-icon
+                                  class="folder-icon folder-closed"
+                                  icon="mdi:folder"
+                                ></iconify-icon
+                                ><iconify-icon
+                                  class="folder-icon folder-open"
+                                  icon="mdi:folder-open"
+                                ></iconify-icon
+                                >tooling/
+                              </summary>
+                              <ul>
+                                <li>
+                                  <iconify-icon
+                                    icon="skill-icons:github-dark"
+                                  ></iconify-icon
+                                  >github
+                                </li>
+                                <li>
+                                  <iconify-icon
+                                    icon="logos:git-icon"
+                                  ></iconify-icon
+                                  >git
+                                </li>
+                                <li>
+                                  <iconify-icon
+                                    icon="vscode-icons:file-type-cursorrules"
+                                  ></iconify-icon
+                                  >cursor
+                                </li>
+                              </ul>
+                            </details>
+                          </li>
+                          <li>
+                            <details>
+                              <summary>
+                                <iconify-icon
+                                  class="folder-icon folder-closed"
+                                  icon="mdi:folder"
+                                ></iconify-icon
+                                ><iconify-icon
+                                  class="folder-icon folder-open"
+                                  icon="mdi:folder-open"
+                                ></iconify-icon
+                                >productivity/
+                              </summary>
+                              <ul>
+                                <li>
+                                  <iconify-icon
+                                    class="tech-icon tools"
+                                    icon="logos:obsidian-icon"
+                                  ></iconify-icon
+                                  >obsidian
+                                </li>
+                                <li>
+                                  <iconify-icon
+                                    class="tech-icon tools"
+                                    icon="vscode-icons:file-type-excalidraw"
+                                  ></iconify-icon
+                                  >excalidraw
+                                </li>
+                              </ul>
+                            </details>
+                          </li>
+                          <li>
+                            <details>
+                              <summary>
+                                <iconify-icon
+                                  class="folder-icon folder-closed"
+                                  icon="mdi:folder"
+                                ></iconify-icon
+                                ><iconify-icon
+                                  class="folder-icon folder-open"
+                                  icon="mdi:folder-open"
+                                ></iconify-icon
+                                >favorite languages/
+                              </summary>
+                              <ul>
+                                <li>
+                                  <iconify-icon
+                                    class="tech-icon tools"
+                                    icon="devicon:python"
+                                  ></iconify-icon
+                                  >python
+                                </li>
+                                <li>
+                                  <iconify-icon
+                                    class="tech-icon tools"
+                                    icon="logos:typescript-icon"
+                                  ></iconify-icon
+                                  >typescript
+                                </li>
+                              </ul>
+                            </details>
+                          </li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li>
+                      <details>
+                        <summary>
+                          <iconify-icon
+                            class="folder-icon folder-closed"
+                            icon="mdi:folder"
+                          ></iconify-icon
+                          ><iconify-icon
+                            class="folder-icon folder-open"
+                            icon="mdi:folder-open"
+                          ></iconify-icon
+                          >projects/
+                        </summary>
+                        <ul>
+                          <li>
+                            <a href="https://www.wishswipe.app" target="_blank"
                               ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
+                                icon="streamline-color:shopping-bag-hand-bag-2"
                               ></iconify-icon
-                              >tooling/
-                            </summary>
-                            <ul>
-                              <li>
-                                <iconify-icon
-                                  icon="skill-icons:github-dark"
-                                ></iconify-icon
-                                >github
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="logos:git-icon"
-                                ></iconify-icon
-                                >git
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="vscode-icons:file-type-cursorrules"
-                                ></iconify-icon
-                                >cursor
-                              </li>
-                            </ul>
-                          </details>
-                        </li>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
+                              >wishswipe</a
+                            >
+                          </li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li>
+                      <details>
+                        <summary>
+                          <iconify-icon
+                            class="folder-icon folder-closed"
+                            icon="mdi:folder"
+                          ></iconify-icon
+                          ><iconify-icon
+                            class="folder-icon folder-open"
+                            icon="mdi:folder-open"
+                          ></iconify-icon
+                          >interesting stuff/
+                        </summary>
+                        <ul>
+                          <li>
+                            <a href="./components/travel/travel.html"
                               ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
+                                icon="streamline-flex-color:airport-plane-flat"
                               ></iconify-icon
-                              >productivity/
-                            </summary>
-                            <ul>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="logos:obsidian-icon"
-                                ></iconify-icon
-                                >obsidian
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="vscode-icons:file-type-excalidraw"
-                                ></iconify-icon
-                                >excalidraw
-                              </li>
-                            </ul>
-                          </details>
-                        </li>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
+                              >travel</a
+                            >
+                          </li>
+                          <li>
+                            <a href="./components/food/food.html"
                               ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
+                                icon="fluent-color:food-24"
                               ></iconify-icon
-                              >favorite languages/
-                            </summary>
-                            <ul>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="devicon:python"
-                                ></iconify-icon
-                                >python
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="logos:typescript-icon"
-                                ></iconify-icon
-                                >typescript
-                              </li>
-                            </ul>
-                          </details>
-                        </li>
-                      </ul>
-                    </details>
-                  </li>
-                  <li>
-                    <details>
-                      <summary>
-                        <iconify-icon
-                          class="folder-icon folder-closed"
-                          icon="mdi:folder"
-                        ></iconify-icon
+                              >food</a
+                            >
+                          </li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li>
+                      <a href="./assets/docs/evan-mavis-resume.pdf" download
                         ><iconify-icon
-                          class="folder-icon folder-open"
-                          icon="mdi:folder-open"
+                          icon="streamline-flex-color:paperclip-1"
                         ></iconify-icon
-                        >projects/
-                      </summary>
-                      <ul>
-                        <li>
-                          <a href="https://www.wishswipe.app" target="_blank"
-                            ><iconify-icon
-                              icon="streamline-color:shopping-bag-hand-bag-2"
-                            ></iconify-icon
-                            >wishswipe</a
-                          >
-                        </li>
-                      </ul>
-                    </details>
-                  </li>
-                  <li>
-                    <details>
-                      <summary>
-                        <iconify-icon
-                          class="folder-icon folder-closed"
-                          icon="mdi:folder"
-                        ></iconify-icon
+                        >resume</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/evan-mavis/"
+                        target="_blank"
+                        ><iconify-icon icon="devicon:linkedin"></iconify-icon
+                        >linkedin</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://github.com/evan-mavis" target="_blank"
+                        ><iconify-icon icon="skill-icons:github-dark">
+                        </iconify-icon
+                        >github</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:evanmavis3@gmail.com?subject=Make it interesting ;)"
                         ><iconify-icon
-                          class="folder-icon folder-open"
-                          icon="mdi:folder-open"
+                          icon="fluent-color:mail-28"
                         ></iconify-icon
-                        >interesting stuff/
-                      </summary>
-                      <ul>
-                        <li>
-                          <a href="./components/travel/travel.html"
-                            ><iconify-icon
-                              icon="streamline-flex-color:airport-plane-flat"
-                            ></iconify-icon
-                            >travel</a
-                          >
-                        </li>
-                        <li>
-                          <a href="./components/food/food.html"
-                            ><iconify-icon
-                              icon="fluent-color:food-24"
-                            ></iconify-icon
-                            >food</a
-                          >
-                        </li>
-                      </ul>
-                    </details>
-                  </li>
-                  <li>
-                    <a href="./assets/docs/evan-mavis-resume.pdf" download
-                      ><iconify-icon
-                        icon="streamline-flex-color:paperclip-1"
-                      ></iconify-icon
-                      >resume</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/evan-mavis/"
-                      target="_blank"
-                      ><iconify-icon icon="devicon:linkedin"></iconify-icon
-                      >linkedin</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://github.com/evan-mavis" target="_blank"
-                      ><iconify-icon icon="skill-icons:github-dark">
-                      </iconify-icon
-                      >github</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:evanmavis3@gmail.com?subject=Make it interesting ;)"
-                      ><iconify-icon icon="fluent-color:mail-28"></iconify-icon
-                      >email</a
-                    >
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </details>
-      </li>
-    </ul>
+                        >email</a
+                      >
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+    <div id="avatar-overlay" class="avatar-modal" aria-hidden="true">
+      <img
+        class="avatar-modal__img"
+        src="./assets/imgs/avatar.png"
+        alt="profile avatar enlarged"
+      />
+    </div>
     <script src="brain.js"></script>
   </body>
 </html>

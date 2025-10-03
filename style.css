@@ -20,7 +20,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Top-right expand/collapse controls */
+#page-root.is-blurred {
+  filter: blur(6px);
+  transition: filter 200ms ease;
+}
+
 #tree-controls {
   position: fixed;
   top: 16px;
@@ -49,10 +53,6 @@ body {
   color: #00ff00;
 }
 
-#tree-controls button:hover {
-  /* no box glow; icon will glow instead */
-}
-
 #tree-controls button:active {
   transform: scale(0.98);
 }
@@ -70,61 +70,66 @@ body::before {
   height: 100vh;
   background: radial-gradient(
       ellipse 800px 400px at 10% 20%,
-      rgba(51, 0, 102, 0.25) 0%,
+      rgba(51, 0, 102, 0.35) 0%,
       transparent 50%
     ),
     radial-gradient(
       ellipse 600px 800px at 90% 80%,
-      rgba(0, 102, 51, 0.25) 0%,
+      rgba(0, 102, 51, 0.35) 0%,
       transparent 50%
     ),
     radial-gradient(
       ellipse 1000px 300px at 50% 10%,
-      rgba(26, 0, 51, 0.18) 0%,
+      rgba(26, 0, 51, 0.3) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 400px 1000px at 80% 30%,
-      rgba(0, 61, 26, 0.18) 0%,
+      rgba(0, 61, 26, 0.3) 0%,
       transparent 70%
     ),
     radial-gradient(
       ellipse 700px 500px at 20% 90%,
-      rgba(45, 0, 102, 0.25) 0%,
+      rgba(45, 0, 102, 0.35) 0%,
       transparent 50%
     ),
     radial-gradient(
       ellipse 400px 200px at 15% 85%,
-      rgba(120, 255, 120, 0.08) 0%,
+      rgba(120, 255, 120, 0.18) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 300px 600px at 85% 15%,
-      rgba(200, 100, 255, 0.1) 0%,
+      rgba(200, 100, 255, 0.2) 0%,
       transparent 70%
     ),
     radial-gradient(
       ellipse 500px 300px at 45% 45%,
-      rgba(0, 255, 150, 0.06) 0%,
+      rgba(0, 255, 150, 0.15) 0%,
       transparent 65%
     ),
     radial-gradient(
       ellipse 250px 400px at 95% 95%,
-      rgba(150, 50, 255, 0.08) 0%,
+      rgba(150, 50, 255, 0.18) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 600px 150px at 70% 25%,
-      rgba(120, 255, 120, 0.05) 0%,
+      rgba(120, 255, 120, 0.12) 0%,
       transparent 75%
     ),
     radial-gradient(
       ellipse 200px 500px at 25% 60%,
-      rgba(200, 100, 255, 0.06) 0%,
+      rgba(200, 100, 255, 0.14) 0%,
       transparent 60%
     );
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+}
+
+#page-root {
+  position: relative;
+  z-index: 1;
 }
 
 .main-heading {
@@ -196,6 +201,15 @@ details > summary:not(.main-heading):not(.bio) {
 
 details > summary.main-heading {
   padding-left: 50px;
+  padding-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Reserve space below when avatar is expanded so it doesn't overlap next line */
+details > summary.main-heading.is-avatar-expanded {
+  padding-bottom: 36px;
 }
 
 details > summary.main-heading .folder-icon {
@@ -204,6 +218,7 @@ details > summary.main-heading .folder-icon {
 
 details > summary.bio {
   padding-left: 32px;
+  padding-top: 1px;
 }
 
 details > summary.bio .folder-icon {
@@ -226,6 +241,63 @@ details > summary .folder-icon {
   transition: color 0.3s ease, text-shadow 0.3s ease, opacity 0.2s ease;
   line-height: 1;
   transform-origin: left center;
+}
+
+.main-heading__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 8px;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+  cursor: pointer;
+  position: relative;
+  transform-origin: left top;
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 260ms ease, box-shadow 220ms ease;
+}
+
+.main-heading__avatar.is-expanded {
+  transform: translateY(14px) scale(2.4);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 16px rgba(0, 255, 0, 0.6);
+}
+
+/* Fullscreen avatar modal */
+.avatar-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.4);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.avatar-modal.is-open {
+  display: flex;
+  opacity: 1;
+}
+
+.avatar-modal__img {
+  width: min(70vw, 420px);
+  height: min(70vw, 420px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ff00;
+  box-shadow: 0 0 16px rgba(0, 255, 0, 0.8), 0 0 24px rgba(0, 255, 0, 0.6);
+  transform: scale(0.96);
+  transition: transform 220ms ease;
+}
+
+.avatar-modal.is-open .avatar-modal__img {
+  transform: scale(1);
 }
 
 details > summary .folder-closed {
@@ -260,7 +332,6 @@ details[open] > ul {
   opacity: 1;
 }
 
-/* Disable animations during bulk expand to prevent flicker */
 body.instant-toggle details > ul {
   transition: none !important;
   max-height: none !important;
@@ -320,6 +391,70 @@ iconify-icon:hover {
     color: #88ff88;
     text-shadow: 0 0 2px #88ff88;
     font-size: 16px;
+  }
+
+  /* Tone down right-corner greens on mobile */
+  body::before {
+    background: radial-gradient(
+        ellipse 800px 400px at 10% 20%,
+        rgba(51, 0, 102, 0.35) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 600px 800px at 90% 80%,
+        rgba(0, 102, 51, 0.16) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 1000px 300px at 50% 10%,
+        rgba(26, 0, 51, 0.3) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 400px 1000px at 80% 30%,
+        rgba(0, 61, 26, 0.12) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 700px 500px at 20% 90%,
+        rgba(45, 0, 102, 0.35) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 400px 200px at 15% 85%,
+        rgba(120, 255, 120, 0.12) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 300px 600px at 85% 15%,
+        rgba(200, 100, 255, 0.2) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 500px 300px at 45% 45%,
+        rgba(0, 255, 150, 0.1) 0%,
+        transparent 65%
+      ),
+      radial-gradient(
+        ellipse 250px 400px at 95% 95%,
+        rgba(150, 50, 255, 0.18) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 600px 150px at 70% 25%,
+        rgba(120, 255, 120, 0.05) 0%,
+        transparent 75%
+      ),
+      radial-gradient(
+        ellipse 200px 500px at 25% 60%,
+        rgba(200, 100, 255, 0.14) 0%,
+        transparent 60%
+      );
+  }
+
+  /* Hide expand/collapse controls on mobile */
+  #tree-controls {
+    display: none;
   }
 
   .main-heading {
