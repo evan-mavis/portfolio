@@ -352,6 +352,7 @@ summary {
   .bio {
     color: #88ff88;
     text-shadow: 0 0 3px #88ff88;
+    font-size: 1em;
   }
 
   summary {
