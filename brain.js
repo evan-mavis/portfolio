@@ -227,9 +227,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const icon = toggleBtn.querySelector("iconify-icon");
     if (expand) {
       toggleBtn.title = "Expand all";
+      toggleBtn.setAttribute("aria-label", "Expand all");
       if (icon) icon.setAttribute("icon", "mdi:arrow-expand-all");
     } else {
       toggleBtn.title = "Collapse all";
+      toggleBtn.setAttribute("aria-label", "Collapse all");
       if (icon) icon.setAttribute("icon", "mdi:arrow-collapse-all");
     }
   }
@@ -240,9 +242,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const icon = toggleBtn.querySelector("iconify-icon");
       if (expand) {
         toggleBtn.title = "Collapse all";
+        toggleBtn.setAttribute("aria-label", "Collapse all");
         if (icon) icon.setAttribute("icon", "mdi:arrow-collapse-all");
       } else {
         toggleBtn.title = "Expand all";
+        toggleBtn.setAttribute("aria-label", "Expand all");
         if (icon) icon.setAttribute("icon", "mdi:arrow-expand-all");
       }
       if (expand) {
