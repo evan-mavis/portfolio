@@ -197,7 +197,7 @@ details > summary:hover::before {
 
 details > summary.main-heading:hover::before {
   color: #44ff44;
-  text-shadow: 0 0 10px #00ff00, 0 0 15px #00ff00;
+  text-shadow: 0 0 6px #00ff00, 0 0 10px #00ff00; /* Reduce glow */
 }
 
 ul li {
@@ -348,7 +348,7 @@ summary {
 
   .main-heading {
     color: #88ff88;
-    text-shadow: 0 0 5px #88ff88;
+    text-shadow: 0 0 3px #88ff88; /* Reduce main heading glow on mobile */
   }
 
   .bio {
@@ -395,7 +395,7 @@ summary {
   }
 
   details > summary:hover::before {
-    text-shadow: 0 0 2px #00ff00; /* Reduced glow on mobile */
+    text-shadow: 0 0 1px #00ff00; /* Reduce folder icon glow on mobile */
   }
 
   .bio__cu-highlight {
