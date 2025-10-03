@@ -158,9 +158,10 @@ details > summary:not(.main-heading):not(.bio)::before {
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
   transition: all 0.3s ease;
-  vertical-align: middle;
+  vertical-align: text-top;
   line-height: 1;
   display: inline-block;
+  margin-top: -2px;
 }
 
 details[open] > summary:not(.main-heading):not(.bio)::before {
@@ -177,9 +178,10 @@ details > summary.bio::before {
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
   transition: all 0.3s ease;
-  vertical-align: middle;
+  vertical-align: text-top;
   line-height: 1;
   display: inline-block;
+  margin-top: -2px;
 }
 
 details[open] > summary.main-heading::before,
@@ -386,9 +388,10 @@ summary {
   details > summary.bio::before {
     font-size: 0.9em;
     margin-right: 6px;
-    vertical-align: middle;
+    vertical-align: text-top;
     line-height: 1;
     display: inline-block;
+    margin-top: -1px;
   }
 
   details > summary:hover::before {
