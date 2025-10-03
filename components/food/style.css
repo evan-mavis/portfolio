@@ -237,22 +237,22 @@ h3 {
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .back-button {
-    color: #7a4d99; /* Even dimmer purple for mobile */
-    text-shadow: 0 0 2px #7a4d99; /* Minimal glow */
+    color: #7a4d99;
+    text-shadow: 0 0 2px #7a4d99;
   }
 
   .back-button:hover {
-    color: #8b5aa6; /* Dimmer hover */
-    text-shadow: 0 0 3px #7a4d99; /* Minimal glow */
+    color: #8b5aa6;
+    text-shadow: 0 0 3px #7a4d99;
   }
 
   h1 {
-    text-shadow: 0 0 3px #00ff00; /* Reduce heading glow on mobile */
+    text-shadow: 0 0 3px #00ff00;
   }
 
   h2 > em {
-    color: #999933; /* Dimmer yellow for mobile */
-    text-shadow: 0 0 1px #999933; /* Minimal glow */
+    color: #999933;
+    text-shadow: 0 0 1px #999933;
   }
 }
 

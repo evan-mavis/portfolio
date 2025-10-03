@@ -127,6 +127,8 @@ a:hover {
 ul {
   list-style-type: none;
   line-height: 2em;
+  margin: 0;
+  padding-left: 18px;
 }
 
 summary {
@@ -149,12 +151,13 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
-/* Folder icons for folder nodes */
 details > summary:not(.main-heading):not(.bio)::before {
-  content: "\f07b"; /* FontAwesome folder icon Unicode */
+  content: "\f07b";
   font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
   font-weight: 900;
   margin-right: 8px;
+  width: 1.2em;
+  text-align: center;
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
   transition: all 0.3s ease;
@@ -165,16 +168,17 @@ details > summary:not(.main-heading):not(.bio)::before {
 }
 
 details[open] > summary:not(.main-heading):not(.bio)::before {
-  content: "\f07c"; /* FontAwesome open folder icon Unicode */
+  content: "\f07c";
 }
 
-/* Folder icons for main heading and bio sections */
 details > summary.main-heading::before,
 details > summary.bio::before {
-  content: "\f07b"; /* FontAwesome folder icon Unicode */
+  content: "\f07b";
   font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
   font-weight: 900;
   margin-right: 8px;
+  width: 1.2em;
+  text-align: center;
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
   transition: all 0.3s ease;
@@ -186,10 +190,9 @@ details > summary.bio::before {
 
 details[open] > summary.main-heading::before,
 details[open] > summary.bio::before {
-  content: "\f07c"; /* FontAwesome open folder icon Unicode */
+  content: "\f07c";
 }
 
-/* Hover effects for folder icons */
 details > summary:hover::before {
   color: #44ff44;
   text-shadow: 0 0 10px #00ff00;
@@ -197,7 +200,7 @@ details > summary:hover::before {
 
 details > summary.main-heading:hover::before {
   color: #44ff44;
-  text-shadow: 0 0 6px #00ff00, 0 0 10px #00ff00; /* Reduce glow */
+  text-shadow: 0 0 6px #00ff00, 0 0 10px #00ff00;
 }
 
 ul li {
@@ -206,18 +209,18 @@ ul li {
 
 ul li::before {
   position: absolute;
-  left: -10px;
+  left: -18px;
   top: 0px;
   border-left: 2px solid #00ff00;
   border-bottom: 2px solid #00ff00;
   content: "";
-  width: 8px;
+  width: 16px;
   height: 1em;
 }
 
 ul li::after {
   position: absolute;
-  left: -10px;
+  left: -18px;
   bottom: 0px;
   border-left: 2px solid #00ff00;
   content: "";
@@ -240,7 +243,6 @@ summary {
   transition: color 0.1s ease, text-shadow 0.1s ease;
 }
 
-/* Technology icons styling */
 .tech-icon {
   display: inline-block;
   margin-right: 8px;
@@ -256,7 +258,6 @@ summary {
   transform: scale(1.05);
 }
 
-/* Specific icon colors for different tech categories */
 .tech-icon.frontend {
   color: #ff6b6b;
 }
@@ -297,7 +298,6 @@ summary {
   color: #fed976;
 }
 
-/* Contact icons specific colors */
 .tech-icon.linkedin {
   color: #0077b5;
 }
@@ -338,17 +338,16 @@ summary {
   color: #bb77d6;
 }
 
-/* Mobile optimizations */
 @media (max-width: 768px) {
   body {
-    color: #88ff88; /* Dimmer green for better mobile readability */
-    text-shadow: 0 0 2px #88ff88; /* Reduced glow on mobile */
-    font-size: 16px; /* Slightly smaller text on mobile */
+    color: #88ff88;
+    text-shadow: 0 0 2px #88ff88;
+    font-size: 16px;
   }
 
   .main-heading {
     color: #88ff88;
-    text-shadow: 0 0 3px #88ff88; /* Reduce main heading glow on mobile */
+    text-shadow: 0 0 3px #88ff88;
   }
 
   .bio {
@@ -379,10 +378,9 @@ summary {
   }
 
   .tech-icon:hover {
-    transform: none; /* Disable ! on mobile for better touch experience */
+    transform: none;
   }
 
-  /* Mobile folder icon optimizations */
   details > summary::before,
   details > summary.main-heading::before,
   details > summary.bio::before {
@@ -395,29 +393,29 @@ summary {
   }
 
   details > summary:hover::before {
-    text-shadow: 0 0 1px #00ff00; /* Reduce folder icon glow on mobile */
+    text-shadow: 0 0 1px #00ff00;
   }
 
   .bio__cu-highlight {
-    color: #ffd700; /* Brighter gold for mobile */
-    text-shadow: 0 0 2px #ffd700; /* Minimal glow on mobile */
-    font-size: 0.9em; /* Smaller text to prevent wrapping */
+    color: #ffd700;
+    text-shadow: 0 0 2px #ffd700;
+    font-size: 0.9em;
   }
 
   a {
-    color: #9966cc; /* Dimmer purple for mobile */
-    text-shadow: 0 0 2px #9966cc; /* Reduced glow */
+    color: #9966cc;
+    text-shadow: 0 0 2px #9966cc;
   }
 
   a:hover {
-    color: #b388d6; /* Dimmer purple hover */
-    text-shadow: 0 0 3px #9966cc; /* Minimal glow */
+    color: #b388d6;
+    text-shadow: 0 0 3px #9966cc;
   }
 
   details[open] > summary {
-    color: #00ff00 !important; /* Standard neon green for selected items */
+    color: #00ff00 !important;
     transition: color 0.1s ease, text-shadow 0.1s ease;
-    text-shadow: 0 0 1px #00ff00; /* Minimal glow to reduce blur */
+    text-shadow: 0 0 1px #00ff00;
   }
 }
 

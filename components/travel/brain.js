@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   }, 100);
 
-  // conditionally add resize event listener based on screen width
   if (window.innerWidth >= 768) {
     window.addEventListener("resize", debouncedUpdate);
   }
@@ -38,27 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // handle cases where images are already cached
     if (img.complete) {
       img.onload();
     }
   });
 
-  // scroll to top on load
   requestAnimationFrame(() => {
     window.scrollTo(0, 0);
   });
 });
 
 function updateLines({ imageContainer, images, observer }) {
-  // clear existing lines
   const existingLines = imageContainer.querySelectorAll(".line-segment");
   existingLines.forEach((line) => line.remove());
 
-  // clear existing pins
   resetPins(imageContainer);
 
-  // calculate line segments
   let lineSegments = [];
   let cornerPositions = [];
 
@@ -81,7 +75,6 @@ function updateLines({ imageContainer, images, observer }) {
     }
   });
 
-  // create line elements and add them to the container
   lineSegments.forEach((segment, index) => {
     const line = document.createElement("div");
     line.classList.add("line-segment");
@@ -119,7 +112,6 @@ function createIntersectionObserver(imageContainer, images) {
           const img = entry.target;
           const index = Array.from(images).indexOf(img);
 
-          // make the corresponding line segment visible
           if (index > 0) {
             const line = imageContainer.querySelector(
               `.line-segment[data-index="${index - 1}"]`

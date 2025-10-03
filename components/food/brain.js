@@ -340,7 +340,6 @@ function dragStart(e) {
   this.classList.add("dragging");
 
   if (window.innerWidth <= 768) {
-    // prevent default drag behavior on touch devices
     e.preventDefault();
   }
 }
@@ -363,19 +362,15 @@ function dragOver(e) {
   const afterElement = getDragAfterElement(this, e.clientX, e.clientY);
   const items = this.querySelectorAll(".item:not(.dragging)");
 
-  // reset margins for all items
   items.forEach((item) => {
     item.style.marginLeft = "5px";
     item.style.marginRight = "5px";
   });
 
   if (afterElement == null) {
-    // if dragged item is at the end, no change needed as the item will be appended
   } else if (afterElement === items[0]) {
-    // if dragged item is at the beginning
     afterElement.style.marginLeft = "15px";
   } else {
-    // if dragged item is in the middle
     afterElement.style.marginLeft = "15px";
   }
 }
@@ -391,7 +386,6 @@ function getDragAfterElement(container, x, y) {
       const offsetX = x - box.left - box.width / 2;
       const offsetY = y - box.top - box.height / 2;
 
-      // prioritize elements on the same line
       if (offsetY > -box.height / 2 && offsetY < box.height / 2) {
         if (offsetX < 0 && offsetX > closest.offset) {
           return { offset: offsetX, element: child };
@@ -421,7 +415,6 @@ function dragLeave(e) {
 function drop(e) {
   this.classList.remove("drag-over");
 
-  // reset margins for all items
   this.querySelectorAll(".item:not(.dragging)").forEach((item) => {
     item.style.marginLeft = "5px";
     item.style.marginRight = "5px";
@@ -451,7 +444,6 @@ function enlargeImage(e) {
   const img = e.target;
   img.classList.toggle("enlarged");
 
-  // create or remove caption
   if (img.classList.contains("enlarged")) {
     const caption = document.createElement("div");
     caption.classList.add("image-caption");
