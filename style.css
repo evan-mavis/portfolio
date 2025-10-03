@@ -526,6 +526,17 @@ iconify-icon:hover {
     text-shadow: 0 0 3px #9966cc;
   }
 
+  /* Soften only the top-level main heading ("evan mavis/") on mobile */
+  .main-heading {
+    color: #88ff88;
+    text-shadow: 0 0 3px #88ff88, 0 0 6px #88ff88;
+  }
+
+  details > summary.main-heading .folder-icon {
+    color: #88ff88;
+    text-shadow: 0 0 2px #88ff88;
+  }
+
   details[open] > summary {
     color: #00ff00 !important;
     transition: color 0.1s ease, text-shadow 0.1s ease;
