@@ -207,7 +207,6 @@ details > summary.main-heading {
   gap: 10px;
 }
 
-/* Reserve space below when avatar is expanded so it doesn't overlap next line */
 details > summary.main-heading.is-avatar-expanded {
   padding-bottom: 36px;
 }
@@ -265,7 +264,6 @@ details > summary .folder-icon {
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 16px rgba(0, 255, 0, 0.6);
 }
 
-/* Fullscreen avatar modal */
 .avatar-modal {
   position: fixed;
   inset: 0;
@@ -452,7 +450,6 @@ iconify-icon:hover {
       );
   }
 
-  /* Hide expand/collapse controls on mobile */
   #tree-controls {
     display: none;
   }
