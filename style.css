@@ -323,8 +323,8 @@ ul summary {
   }
 
   .bio__cu-highlight {
-    color: #b8860b; /* Much dimmer gold for mobile */
-    text-shadow: 0 0 1px #b8860b; /* Minimal glow on mobile */
+    color: #ffd700; /* Brighter gold for mobile */
+    text-shadow: 0 0 2px #ffd700; /* Minimal glow on mobile */
   }
 
   a {
@@ -338,8 +338,8 @@ ul summary {
   }
 
   ul details[open] > summary {
-    color: #44ff44; /* Brighter neon green for selected items */
-    text-shadow: 0 0 3px #44ff44, 0 0 6px #44ff44; /* Enhanced neon glow */
+    color: #00ff00; /* Standard neon green for selected items */
+    text-shadow: 0 0 1px #00ff00; /* Minimal glow to reduce blur */
   }
 }
 
