@@ -181,6 +181,116 @@ ul summary {
   transition: all 0.3s ease;
 }
 
+/* Technology icons styling */
+.tech-icon {
+  display: inline-block;
+  margin-right: 8px;
+  color: #00ff00;
+  transition: all 0.3s ease;
+  font-size: 1em;
+  text-shadow: none;
+  vertical-align: middle;
+}
+
+.tech-icon:hover {
+  color: #44ff44;
+  transform: scale(1.05);
+}
+
+/* Specific icon colors for different tech categories */
+.tech-icon.frontend {
+  color: #ff6b6b;
+}
+
+.tech-icon.frontend:hover {
+  color: #ff8e8e;
+}
+
+.tech-icon.backend {
+  color: #4ecdc4;
+}
+
+.tech-icon.backend:hover {
+  color: #7dd3d0;
+}
+
+.tech-icon.database {
+  color: #45b7d1;
+}
+
+.tech-icon.database:hover {
+  color: #6bc5d8;
+}
+
+.tech-icon.cloud {
+  color: #96ceb4;
+}
+
+.tech-icon.cloud:hover {
+  color: #a8d5c2;
+}
+
+.tech-icon.tools {
+  color: #feca57;
+}
+
+.tech-icon.tools:hover {
+  color: #fed976;
+}
+
+/* Contact icons specific colors */
+.tech-icon.linkedin {
+  color: #0077b5;
+}
+
+.tech-icon.linkedin:hover {
+  color: #0099d4;
+}
+
+.tech-icon.github {
+  color: #666;
+}
+
+.tech-icon.github:hover {
+  color: #888;
+}
+
+.tech-icon.resume {
+  color: #e74c3c;
+}
+
+.tech-icon.resume:hover {
+  color: #ff6b6b;
+}
+
+.tech-icon.email {
+  color: #3498db;
+}
+
+.tech-icon.email:hover {
+  color: #5dade2;
+}
+
+.tech-icon.project {
+  color: #9b59b6;
+}
+
+.tech-icon.project:hover {
+  color: #bb77d6;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .tech-icon {
+    font-size: 0.9em;
+    margin-right: 6px;
+  }
+
+  .tech-icon:hover {
+    transform: none; /* Disable scale on mobile for better touch experience */
+  }
+}
+
 @keyframes bounce {
   0%,
   20%,
