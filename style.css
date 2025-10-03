@@ -20,6 +20,46 @@ body {
   overflow-x: hidden;
 }
 
+/* Top-right expand/collapse controls */
+#tree-controls {
+  position: fixed;
+  top: 16px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+#tree-controls button {
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  padding: 4px;
+  margin-top: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+#tree-controls button iconify-icon {
+  font-size: 1.8em;
+  transition: text-shadow 0.2s ease;
+}
+
+#tree-controls button:hover {
+  /* no box glow; icon will glow instead */
+}
+
+#tree-controls button:active {
+  transform: scale(0.98);
+}
+
+#tree-controls button:hover iconify-icon {
+  text-shadow: 0 0 8px #00ff00, 0 0 14px #00ff00;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -215,8 +255,16 @@ details > ul {
 }
 
 details[open] > ul {
-  max-height: 2000px;
+  max-height: none;
   opacity: 1;
+}
+
+/* Disable animations during bulk expand to prevent flicker */
+body.instant-toggle details > ul {
+  transition: none !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
 }
 
 ul li {
@@ -255,7 +303,7 @@ summary {
 iconify-icon {
   display: inline-block;
   margin-right: 8px;
-  color: #e6e6e6;
+  color: initial;
   transition: all 0.3s ease;
   font-size: 1em;
   text-shadow: none;
@@ -263,7 +311,6 @@ iconify-icon {
 }
 
 iconify-icon:hover {
-  color: #ffffff;
   transform: scale(1.05);
 }
 

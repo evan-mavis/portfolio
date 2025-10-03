@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const OPEN_MS = 700; // opening duration (ms)
   const CLOSE_MS = 220; // faster closing duration (ms)
+  let bulkMode = null; // 'expand' | 'collapse' | null
+  let pendingBulk = 0;
 
   function getContentElement(detailsEl) {
     const summary = detailsEl.querySelector(":scope > summary");
@@ -97,13 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
         detailsEl._animating = false;
         detailsEl._animDirection = null;
         saveDetailsState();
+        // Refresh toggle-all icon/title only if not in a bulk operation
+        try {
+          if (!bulkMode) updateToggleButton();
+        } catch (_) {}
       };
       detailsEl._onEnd = onEnd;
       content.addEventListener("transitionend", onEnd);
     });
   }
 
-  function animateClose(detailsEl, fromCurrent = false) {
+  function animateClose(detailsEl, fromCurrent = false, isBulk = false) {
     const content = getContentElement(detailsEl);
     if (!content) {
       detailsEl.removeAttribute("open");
@@ -145,6 +151,20 @@ document.addEventListener("DOMContentLoaded", function () {
         detailsEl._animating = false;
         detailsEl._animDirection = null;
         saveDetailsState();
+        // Handle bulk collapse bookkeeping to avoid icon flicker
+        if (bulkMode === "collapse" && isBulk) {
+          pendingBulk = Math.max(0, pendingBulk - 1);
+          if (pendingBulk === 0) {
+            bulkMode = null;
+            try {
+              updateToggleButton();
+            } catch (_) {}
+          }
+        } else {
+          try {
+            if (!bulkMode) updateToggleButton();
+          } catch (_) {}
+        }
       };
       detailsEl._onEnd = onEnd;
       content.addEventListener("transitionend", onEnd);
@@ -171,6 +191,94 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Single toggle-all handler
+  const toggleBtn = document.getElementById("toggle-all");
+
+  function getAllDetails() {
+    return Array.from(document.querySelectorAll("details"));
+  }
+
+  function anyClosed() {
+    return getAllDetails().some((d) => !d.hasAttribute("open"));
+  }
+
+  function updateToggleButton() {
+    if (!toggleBtn) return;
+    const expand = anyClosed();
+    const icon = toggleBtn.querySelector("iconify-icon");
+    if (expand) {
+      toggleBtn.title = "Expand all";
+      if (icon) icon.setAttribute("icon", "mdi:arrow-expand-all");
+    } else {
+      toggleBtn.title = "Collapse all";
+      if (icon) icon.setAttribute("icon", "mdi:arrow-collapse-all");
+    }
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const expand = anyClosed();
+      // Immediately flip icon/title for snappy feedback
+      const icon = toggleBtn.querySelector("iconify-icon");
+      if (expand) {
+        toggleBtn.title = "Collapse all";
+        if (icon) icon.setAttribute("icon", "mdi:arrow-collapse-all");
+      } else {
+        toggleBtn.title = "Expand all";
+        if (icon) icon.setAttribute("icon", "mdi:arrow-expand-all");
+      }
+      if (expand) {
+        // Expand instantly with global flag to disable transitions
+        bulkMode = "expand";
+        document.body.classList.add("instant-toggle");
+        getAllDetails().forEach((d) => {
+          const content = getContentElement(d);
+          // cancel any in-flight animations and clear inline styles that could cause flicker
+          if (content) {
+            clearPending(d, content);
+            d._animating = false;
+            d._animDirection = null;
+            content.style.maxHeight = "";
+            content.style.overflow = "";
+            content.style.transition = "";
+            content.style.opacity = "";
+            content.style.display = "";
+          }
+          d.setAttribute("open", "");
+        });
+        saveDetailsState();
+        // Remove flag after paint to keep the change instantaneous
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            document.body.classList.remove("instant-toggle");
+            bulkMode = null;
+            try {
+              updateToggleButton();
+            } catch (_) {}
+          });
+        });
+      } else {
+        bulkMode = "collapse";
+        const nodes = getAllDetails().sort(
+          (a, b) =>
+            b.querySelectorAll("details").length -
+            a.querySelectorAll("details").length
+        );
+        const openNodes = nodes.filter((d) => d.hasAttribute("open"));
+        pendingBulk = openNodes.length;
+        if (pendingBulk === 0) {
+          bulkMode = null;
+          try {
+            updateToggleButton();
+          } catch (_) {}
+        } else {
+          openNodes.forEach((d) => animateClose(d, false, true));
+        }
+      }
+    });
+    updateToggleButton();
+  }
 });
 
 window.addEventListener("beforeunload", saveDetailsState);

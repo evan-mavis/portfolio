@@ -11,6 +11,11 @@
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
   <body>
+    <div id="tree-controls" aria-label="Tree controls">
+      <button id="toggle-all" title="Expand all">
+        <iconify-icon icon="mdi:arrow-expand-all"></iconify-icon>
+      </button>
+    </div>
     <ul>
       <li>
         <details>
@@ -56,26 +61,20 @@
                       </summary>
                       <ul>
                         <li>
-                          <iconify-icon
-                            icon="simple-icons:angular"
-                          ></iconify-icon
+                          <iconify-icon icon="logos:angular-icon"></iconify-icon
                           >angular
                         </li>
                         <li>
-                          <iconify-icon
-                            icon="simple-icons:dotnet"
-                          ></iconify-icon
+                          <iconify-icon icon="logos:dotnet"></iconify-icon
                           >asp.net
                         </li>
                         <li>
-                          <iconify-icon
-                            icon="simple-icons:postgresql"
-                          ></iconify-icon
+                          <iconify-icon icon="logos:postgresql"></iconify-icon
                           >postgres
                         </li>
                         <li>
                           <iconify-icon
-                            icon="simple-icons:microsoftazure"
+                            icon="logos:microsoft-azure"
                           ></iconify-icon
                           >azure
                         </li>
@@ -93,62 +92,64 @@
                           class="folder-icon folder-open"
                           icon="mdi:folder-open"
                         ></iconify-icon
-                        >preferred stack/
+                        >dream stack/
                       </summary>
                       <ul>
                         <li>
-                          <iconify-icon icon="simple-icons:react"></iconify-icon
-                          >react
+                          <iconify-icon icon="logos:react"></iconify-icon>react
                         </li>
                         <li>
                           <iconify-icon
-                            icon="simple-icons:typescript"
+                            icon="logos:typescript-icon"
                           ></iconify-icon
                           >typescript
                         </li>
                         <li>
-                          <iconify-icon icon="simple-icons:vite"></iconify-icon
-                          >vite
+                          <iconify-icon icon="logos:vitejs"></iconify-icon>vite
                         </li>
                         <li>
                           <iconify-icon
-                            icon="simple-icons:tailwindcss"
+                            icon="vscode-icons:file-type-shadcn"
+                          ></iconify-icon
+                          >shadcn
+                        </li>
+                        <li>
+                          <iconify-icon
+                            icon="vscode-icons:file-type-tailwind"
                           ></iconify-icon
                           >tailwind
                         </li>
                         <li>
-                          <iconify-icon
-                            icon="simple-icons:nodedotjs"
-                          ></iconify-icon
+                          <iconify-icon icon="logos:nodejs-icon"></iconify-icon
                           >node.js
                         </li>
                         <li>
                           <iconify-icon
-                            icon="simple-icons:express"
+                            icon="skill-icons:expressjs-dark"
                           ></iconify-icon
                           >express.js
                         </li>
                         <li>
-                          <iconify-icon
-                            icon="simple-icons:postgresql"
-                          ></iconify-icon
+                          <iconify-icon icon="logos:postgresql"></iconify-icon
                           >postgres
                         </li>
                         <li>
-                          <iconify-icon icon="simple-icons:neon"></iconify-icon
+                          <iconify-icon icon="logos:neon-icon"></iconify-icon
                           >neon
                         </li>
                         <li>
                           <iconify-icon
-                            icon="simple-icons:vercel"
+                            icon="skill-icons:vercel-light"
                           ></iconify-icon
                           >vercel
                         </li>
                         <li>
-                          <iconify-icon
-                            icon="simple-icons:railway"
-                          ></iconify-icon
+                          <iconify-icon icon="devicon:railway"></iconify-icon
                           >railway
+                        </li>
+                        <li>
+                          <iconify-icon icon="devicon:firebase"></iconify-icon
+                          >firebase
                         </li>
                       </ul>
                     </details>
@@ -165,7 +166,7 @@
                           class="folder-icon folder-open"
                           icon="mdi:folder-open"
                         ></iconify-icon
-                        >skills/
+                        >other tech/
                       </summary>
                       <ul>
                         <li>
@@ -179,267 +180,26 @@
                                 class="folder-icon folder-open"
                                 icon="mdi:folder-open"
                               ></iconify-icon
-                              >frontend/
+                              >tooling/
                             </summary>
                             <ul>
                               <li>
                                 <iconify-icon
-                                  icon="simple-icons:react"
-                                ></iconify-icon
-                                >react
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:typescript"
-                                ></iconify-icon
-                                >typescript
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:tailwindcss"
-                                ></iconify-icon
-                                >tailwind
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:angular"
-                                ></iconify-icon
-                                >angular
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:html5"
-                                ></iconify-icon
-                                >html
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:sass"
-                                ></iconify-icon
-                                >css/scss
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:vite"
-                                ></iconify-icon
-                                >vite
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:shadcnui"
-                                ></iconify-icon
-                                >shadcn
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:reactivex"
-                                ></iconify-icon
-                                >rxjs
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:ckeditor4"
-                                ></iconify-icon
-                                >ckeditor
-                              </li>
-                            </ul>
-                          </details>
-                        </li>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
-                              ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
-                              ></iconify-icon
-                              >backend/
-                            </summary>
-                            <ul>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:nodedotjs"
-                                ></iconify-icon
-                                >node.js
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:express"
-                                ></iconify-icon
-                                >express.js
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:dotnet"
-                                ></iconify-icon
-                                >asp.net core
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:csharp"
-                                ></iconify-icon
-                                >c#
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:dotnet"
-                                ></iconify-icon
-                                >dapper
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:signal"
-                                ></iconify-icon
-                                >signalr
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:clockify"
-                                ></iconify-icon
-                                >hangfire
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:middleware"
-                                ></iconify-icon
-                                >mediatr
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:checkmarx"
-                                ></iconify-icon
-                                >fluentvalidation
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:swagger"
-                                ></iconify-icon
-                                >swagger
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:adobeacrobatreader"
-                                ></iconify-icon
-                                >aspose
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:testcafe"
-                                ></iconify-icon
-                                >integration & unit testing
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:assert"
-                                ></iconify-icon
-                                >fluent assertions
-                              </li>
-                            </ul>
-                          </details>
-                        </li>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
-                              ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
-                              ></iconify-icon
-                              >database/
-                            </summary>
-                            <ul>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:postgresql"
-                                ></iconify-icon
-                                >postgresql (jsonb)
-                              </li>
-                              <li>
-                                <iconify-icon icon="mdi:table"></iconify-icon
-                                >sql
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:dotnet"
-                                ></iconify-icon
-                                >entity framework core
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="mdi:database-arrow-right"
-                                ></iconify-icon
-                                >node pg migrate
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:alteryx"
-                                ></iconify-icon
-                                >alteryx
-                              </li>
-                            </ul>
-                          </details>
-                        </li>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
-                              ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
-                              ></iconify-icon
-                              >devops & tooling/
-                            </summary>
-                            <ul>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:azuredevops"
-                                ></iconify-icon
-                                >azure devops
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:git"
-                                ></iconify-icon
-                                >git
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:github"
+                                  icon="skill-icons:github-dark"
                                 ></iconify-icon
                                 >github
                               </li>
                               <li>
                                 <iconify-icon
-                                  icon="simple-icons:vercel"
+                                  icon="logos:git-icon"
                                 ></iconify-icon
-                                >vercel
+                                >git
                               </li>
                               <li>
                                 <iconify-icon
-                                  icon="simple-icons:neon"
+                                  icon="vscode-icons:file-type-cursorrules"
                                 ></iconify-icon
-                                >neon
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:railway"
-                                ></iconify-icon
-                                >railway
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  icon="simple-icons:firebase"
-                                ></iconify-icon
-                                >firebase
+                                >cursor
                               </li>
                             </ul>
                           </details>
@@ -461,38 +221,17 @@
                               <li>
                                 <iconify-icon
                                   class="tech-icon tools"
-                                  icon="simple-icons:obsidian"
+                                  icon="logos:obsidian-icon"
                                 ></iconify-icon
                                 >obsidian
                               </li>
                               <li>
                                 <iconify-icon
                                   class="tech-icon tools"
-                                  icon="simple-icons:excalidraw"
+                                  icon="vscode-icons:file-type-excalidraw"
                                 ></iconify-icon
                                 >excalidraw
                               </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="simple-icons:microsoftexcel"
-                                ></iconify-icon
-                                >excel
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="simple-icons:microsoftword"
-                                ></iconify-icon
-                                >word
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="simple-icons:microsoftoutlook"
-                                ></iconify-icon
-                                >outlook
-                              </li>
                             </ul>
                           </details>
                         </li>
@@ -507,60 +246,22 @@
                                 class="folder-icon folder-open"
                                 icon="mdi:folder-open"
                               ></iconify-icon
-                              >languages/
+                              >favorite languages/
                             </summary>
                             <ul>
                               <li>
                                 <iconify-icon
                                   class="tech-icon tools"
-                                  icon="simple-icons:c"
-                                ></iconify-icon
-                                >c
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="simple-icons:cplusplus"
-                                ></iconify-icon
-                                >c++
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="simple-icons:python"
+                                  icon="devicon:python"
                                 ></iconify-icon
                                 >python
                               </li>
-                            </ul>
-                          </details>
-                        </li>
-                        <li>
-                          <details>
-                            <summary>
-                              <iconify-icon
-                                class="folder-icon folder-closed"
-                                icon="mdi:folder"
-                              ></iconify-icon
-                              ><iconify-icon
-                                class="folder-icon folder-open"
-                                icon="mdi:folder-open"
-                              ></iconify-icon
-                              >certifications/
-                            </summary>
-                            <ul>
                               <li>
                                 <iconify-icon
                                   class="tech-icon tools"
-                                  icon="mdi:certificate"
+                                  icon="logos:typescript-icon"
                                 ></iconify-icon
-                                >az-900
-                              </li>
-                              <li>
-                                <iconify-icon
-                                  class="tech-icon tools"
-                                  icon="simple-icons:alteryx"
-                                ></iconify-icon
-                                >alteryx designer core
+                                >typescript
                               </li>
                             </ul>
                           </details>
@@ -584,7 +285,9 @@
                       <ul>
                         <li>
                           <a href="https://www.wishswipe.app" target="_blank"
-                            ><iconify-icon icon="mdi:cart"></iconify-icon
+                            ><iconify-icon
+                              icon="streamline-color:shopping-bag-hand-bag-2"
+                            ></iconify-icon
                             >wishswipe</a
                           >
                         </li>
@@ -606,15 +309,29 @@
                       </summary>
                       <ul>
                         <li>
-                          <a href="./components/travel/travel.html">travel</a>
+                          <a href="./components/travel/travel.html"
+                            ><iconify-icon
+                              icon="streamline-flex-color:airport-plane-flat"
+                            ></iconify-icon
+                            >travel</a
+                          >
                         </li>
-                        <li><a href="./components/food/food.html">food</a></li>
+                        <li>
+                          <a href="./components/food/food.html"
+                            ><iconify-icon
+                              icon="fluent-color:food-24"
+                            ></iconify-icon
+                            >food</a
+                          >
+                        </li>
                       </ul>
                     </details>
                   </li>
                   <li>
                     <a href="./assets/docs/evan-mavis-resume.pdf" download
-                      ><iconify-icon icon="mdi:paperclip"></iconify-icon
+                      ><iconify-icon
+                        icon="streamline-flex-color:paperclip-1"
+                      ></iconify-icon
                       >resume</a
                     >
                   </li>
@@ -622,20 +339,22 @@
                     <a
                       href="https://www.linkedin.com/in/evan-mavis/"
                       target="_blank"
-                      ><iconify-icon icon="simple-icons:linkedin"></iconify-icon
+                      ><iconify-icon icon="devicon:linkedin"></iconify-icon
                       >linkedin</a
                     >
                   </li>
                   <li>
                     <a href="https://github.com/evan-mavis" target="_blank"
-                      ><iconify-icon icon="simple-icons:github"></iconify-icon
+                      ><iconify-icon icon="skill-icons:github-dark">
+                      </iconify-icon
                       >github</a
                     >
                   </li>
                   <li>
                     <a
                       href="mailto:evanmavis3@gmail.com?subject=Make it interesting ;)"
-                      ><iconify-icon icon="mdi:email"></iconify-icon>email</a
+                      ><iconify-icon icon="fluent-color:mail-28"></iconify-icon
+                      >email</a
                     >
                   </li>
                 </ul>
