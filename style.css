@@ -141,6 +141,55 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
+/* Folder icons for folder nodes */
+details > summary:not(.main-heading):not(.bio)::before {
+  content: "\f07b"; /* FontAwesome folder icon Unicode */
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  font-weight: 900;
+  margin-right: 8px;
+  color: #00ff00;
+  text-shadow: 0 0 3px #00ff00;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+}
+
+details[open] > summary:not(.main-heading):not(.bio)::before {
+  content: "\f07c"; /* FontAwesome open folder icon Unicode */
+}
+
+/* Folder icons for main heading and bio sections */
+details > summary.main-heading::before,
+details > summary.bio::before {
+  content: "\f07b"; /* FontAwesome folder icon Unicode */
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  font-weight: 900;
+  margin-right: 8px;
+  color: #00ff00;
+  text-shadow: 0 0 3px #00ff00;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+}
+
+details[open] > summary.main-heading::before,
+details[open] > summary.bio::before {
+  content: "\f07c"; /* FontAwesome open folder icon Unicode */
+}
+
+/* Hover effects for folder icons */
+details > summary:hover::before {
+  color: #44ff44;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+details > summary.main-heading:hover::before {
+  color: #44ff44;
+  text-shadow: 0 0 10px #00ff00, 0 0 15px #00ff00;
+}
+
 ul li {
   position: relative;
 }
@@ -170,16 +219,15 @@ ul li:last-child::after {
   display: none;
 }
 
-ul details[open] > summary {
-  color: #88ff88;
-  font-style: italic;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+details[open] > summary {
+  color: #88ff88 !important;
+  transition: color 0.1s ease, text-shadow 0.1s ease;
   text-shadow: 0 0 10px #00ff00, 0 0 18px #00ff00;
   font-weight: bold;
 }
 
-ul summary {
-  transition: all 0.3s ease;
+summary {
+  transition: color 0.1s ease, text-shadow 0.1s ease;
 }
 
 /* Technology icons styling */
@@ -308,8 +356,9 @@ ul summary {
     text-shadow: 0 0 1px #88ff88;
   }
 
-  ul details[open] > summary {
-    color: #bbffbb;
+  details[open] > summary {
+    color: #bbffbb !important;
+    transition: color 0.1s ease, text-shadow 0.1s ease;
     text-shadow: 0 0 1px #88ff88;
   }
 
@@ -319,7 +368,22 @@ ul summary {
   }
 
   .tech-icon:hover {
-    transform: none; /* Disable scale on mobile for better touch experience */
+    transform: none; /* Disable ! on mobile for better touch experience */
+  }
+
+  /* Mobile folder icon optimizations */
+  details > summary::before,
+  details > summary.main-heading::before,
+  details > summary.bio::before {
+    font-size: 0.9em;
+    margin-right: 6px;
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  details > summary:hover::before {
+    text-shadow: 0 0 2px #00ff00; /* Reduced glow on mobile */
   }
 
   .bio__cu-highlight {
@@ -338,8 +402,9 @@ ul summary {
     text-shadow: 0 0 3px #9966cc; /* Minimal glow */
   }
 
-  ul details[open] > summary {
-    color: #00ff00; /* Standard neon green for selected items */
+  details[open] > summary {
+    color: #00ff00 !important; /* Standard neon green for selected items */
+    transition: color 0.1s ease, text-shadow 0.1s ease;
     text-shadow: 0 0 1px #00ff00; /* Minimal glow to reduce blur */
   }
 }
