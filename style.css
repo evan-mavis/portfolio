@@ -46,6 +46,7 @@ body {
 #tree-controls button iconify-icon {
   font-size: 1.8em;
   transition: text-shadow 0.2s ease;
+  color: #00ff00;
 }
 
 #tree-controls button:hover {
@@ -146,9 +147,9 @@ details:not([open]) > summary.main-heading {
 
 .bio__cu-highlight {
   display: inline-block;
-  color: #d4af37;
+  color: #ffd700;
   font-weight: bold;
-  text-shadow: 0 0 3px #d4af37, 0 0 6px #d4af37;
+  text-shadow: 0 0 6px #ffd700, 0 0 12px #ffd700;
 }
 
 a {
