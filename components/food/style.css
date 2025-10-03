@@ -7,7 +7,25 @@
 }
 
 body {
-  background-color: #000000;
+  background: radial-gradient(
+      ellipse 800px 400px at 10% 20%,
+      #330066 0%,
+      transparent 50%
+    ),
+    radial-gradient(ellipse 600px 800px at 90% 80%, #006633 0%, transparent 50%),
+    radial-gradient(
+      ellipse 1000px 300px at 50% 10%,
+      #1a0033 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 400px 1000px at 80% 30%,
+      #003d1a 0%,
+      transparent 70%
+    ),
+    radial-gradient(ellipse 700px 500px at 20% 90%, #2d0066 0%, transparent 50%),
+    #0a0a0a;
+  background-attachment: fixed;
   font-family: "PxPlus IBM VGA8", "Courier New", monospace;
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
@@ -18,6 +36,48 @@ body {
   justify-content: center;
   align-content: center;
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      ellipse 400px 200px at 15% 85%,
+      rgba(120, 255, 120, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 300px 600px at 85% 15%,
+      rgba(200, 100, 255, 0.15) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 500px 300px at 45% 45%,
+      rgba(0, 255, 150, 0.08) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 250px 400px at 95% 95%,
+      rgba(150, 50, 255, 0.1) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 600px 150px at 70% 25%,
+      rgba(120, 255, 120, 0.06) 0%,
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 200px 500px at 25% 60%,
+      rgba(200, 100, 255, 0.08) 0%,
+      transparent 60%
+    );
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1 {
@@ -156,7 +216,7 @@ h3 {
 }
 
 .back-button {
-  color: #00ffff;
+  color: #c864ff;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -164,14 +224,14 @@ h3 {
   z-index: 1000;
   text-decoration: none;
   font-size: 2rem;
-  text-shadow: 0 0 5px #00ffff;
+  text-shadow: 0 0 5px #c864ff;
   transition: all 0.3s ease;
   font-weight: bold;
 }
 
 .back-button:hover {
-  color: #66ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 15px #00ffff;
+  color: #e0a3ff;
+  text-shadow: 0 0 10px #c864ff, 0 0 15px #c864ff;
 }
 
 @media (max-width: 767px) {
