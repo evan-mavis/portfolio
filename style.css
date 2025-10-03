@@ -526,15 +526,32 @@ iconify-icon:hover {
     text-shadow: 0 0 3px #9966cc;
   }
 
-  /* Soften only the top-level main heading ("evan mavis/") on mobile */
   .main-heading {
     color: #88ff88;
-    text-shadow: 0 0 3px #88ff88, 0 0 6px #88ff88;
+    text-shadow: none !important;
   }
 
   details > summary.main-heading .folder-icon {
-    color: #88ff88;
-    text-shadow: 0 0 2px #88ff88;
+    color: #00ff00;
+    text-shadow: none !important;
+  }
+
+  details > summary.main-heading:hover {
+    text-shadow: none !important;
+  }
+
+  details[open] > summary.main-heading {
+    text-shadow: none !important;
+  }
+
+  details > summary.main-heading .folder-icon.first-folder {
+    color: #00ff00 !important;
+    text-shadow: none !important;
+  }
+  details > summary.main-heading:hover .folder-icon.first-folder,
+  details[open] > summary.main-heading .folder-icon.first-folder {
+    color: #00ff00 !important;
+    text-shadow: none !important;
   }
 
   details[open] > summary {
