@@ -9,6 +9,24 @@
 body {
   font-family: "PxPlus IBM VGA8", "Courier New", monospace;
   color: #00ff00;
+  background: #0a0a0a;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 20px;
+  text-shadow: 0 0 3px #00ff00;
+  font-size: 18px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: radial-gradient(
       ellipse 800px 400px at 10% 20%,
       #330066 0%,
@@ -26,28 +44,7 @@ body {
       transparent 70%
     ),
     radial-gradient(ellipse 700px 500px at 20% 90%, #2d0066 0%, transparent 50%),
-    #0a0a0a;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 20px;
-  text-shadow: 0 0 3px #00ff00;
-  font-size: 18px;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
+    radial-gradient(
       ellipse 400px 200px at 15% 85%,
       rgba(120, 255, 120, 0.12) 0%,
       transparent 60%
@@ -77,10 +74,6 @@ body::before {
       rgba(200, 100, 255, 0.08) 0%,
       transparent 60%
     );
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   pointer-events: none;
   z-index: -1;
 }
@@ -312,12 +305,12 @@ ul summary {
 
   summary:hover {
     color: #aaffaa;
-    text-shadow: 0 0 5px #88ff88;
+    text-shadow: 0 0 1px #88ff88;
   }
 
   ul details[open] > summary {
     color: #bbffbb;
-    text-shadow: 0 0 5px #88ff88;
+    text-shadow: 0 0 1px #88ff88;
   }
 
   .tech-icon {
