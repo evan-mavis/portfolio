@@ -325,6 +325,7 @@ ul summary {
   .bio__cu-highlight {
     color: #ffd700; /* Brighter gold for mobile */
     text-shadow: 0 0 2px #ffd700; /* Minimal glow on mobile */
+    font-size: 0.9em; /* Smaller text to prevent wrapping */
   }
 
   a {
