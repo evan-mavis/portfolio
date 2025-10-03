@@ -145,62 +145,78 @@ summary:hover {
 
 details > summary {
   list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+
+details > summary:not(.main-heading):not(.bio) {
+  padding-top: 1px;
+}
+
+details > summary.main-heading {
+  padding-left: 50px;
+}
+
+details > summary.main-heading .folder-icon {
+  top: -4px;
+}
+
+details > summary.bio {
+  padding-left: 32px;
+}
+
+details > summary.bio .folder-icon {
+  top: 5px;
 }
 
 details > summary::-webkit-details-marker {
   display: none;
 }
 
-details > summary:not(.main-heading):not(.bio)::before {
-  content: "\f07b";
-  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
-  font-weight: 900;
-  margin-right: 8px;
-  width: 1.2em;
+details > summary .folder-icon {
+  position: absolute;
+  left: -3px;
+  top: 6.7px;
+  transform: none;
+  font-size: 1.2em;
   text-align: center;
   color: #00ff00;
   text-shadow: 0 0 3px #00ff00;
-  transition: all 0.3s ease;
-  vertical-align: text-top;
+  transition: color 0.3s ease, text-shadow 0.3s ease, opacity 0.2s ease;
   line-height: 1;
-  display: inline-block;
-  margin-top: -2px;
+  transform-origin: left center;
 }
 
-details[open] > summary:not(.main-heading):not(.bio)::before {
-  content: "\f07c";
+details > summary .folder-closed {
+  opacity: 1;
+}
+details > summary .folder-open {
+  opacity: 0;
+}
+details[open] > summary .folder-closed {
+  opacity: 0;
+}
+details[open] > summary .folder-open {
+  opacity: 1;
 }
 
-details > summary.main-heading::before,
-details > summary.bio::before {
-  content: "\f07b";
-  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
-  font-weight: 900;
-  margin-right: 8px;
-  width: 1.2em;
-  text-align: center;
-  color: #00ff00;
-  text-shadow: 0 0 3px #00ff00;
-  transition: all 0.3s ease;
-  vertical-align: text-top;
-  line-height: 1;
-  display: inline-block;
-  margin-top: -2px;
-}
-
-details[open] > summary.main-heading::before,
-details[open] > summary.bio::before {
-  content: "\f07c";
-}
-
-details > summary:hover::before {
+details > summary:hover .folder-icon {
   color: #44ff44;
   text-shadow: 0 0 10px #00ff00;
 }
 
-details > summary.main-heading:hover::before {
-  color: #44ff44;
-  text-shadow: 0 0 6px #00ff00, 0 0 10px #00ff00;
+details > ul {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  will-change: max-height, opacity;
+  overflow-anchor: none;
+  transition: max-height 300ms ease, opacity 600ms ease;
+}
+
+details[open] > ul {
+  max-height: 2000px;
+  opacity: 1;
 }
 
 ul li {
@@ -232,147 +248,23 @@ ul li:last-child::after {
   display: none;
 }
 
-details[open] > summary {
-  color: #88ff88 !important;
-  transition: color 0.1s ease, text-shadow 0.1s ease;
-  text-shadow: 0 0 10px #00ff00, 0 0 18px #00ff00;
-  font-weight: bold;
-}
-
 summary {
   transition: color 0.1s ease, text-shadow 0.1s ease;
 }
 
-.tech-icon {
+iconify-icon {
   display: inline-block;
   margin-right: 8px;
-  color: #00ff00;
+  color: #e6e6e6;
   transition: all 0.3s ease;
   font-size: 1em;
   text-shadow: none;
   vertical-align: middle;
 }
 
-/* Hide inline tech icons inside folder summaries (folders shouldn't have their own icons) */
-details > summary i.tech-icon {
-  display: none;
-}
-
-.tech-icon:hover {
-  color: #44ff44;
+iconify-icon:hover {
+  color: #ffffff;
   transform: scale(1.05);
-}
-
-.tech-icon.frontend {
-  color: #ff6b6b;
-}
-
-.tech-icon.frontend:hover {
-  color: #ff8e8e;
-}
-
-.tech-icon.backend {
-  color: #4ecdc4;
-}
-
-.tech-icon.backend:hover {
-  color: #7dd3d0;
-}
-
-.tech-icon.database {
-  color: #45b7d1;
-}
-
-.tech-icon.database:hover {
-  color: #6bc5d8;
-}
-
-.tech-icon.cloud {
-  color: #96ceb4;
-}
-
-.tech-icon.cloud:hover {
-  color: #a8d5c2;
-}
-
-.tech-icon.tools {
-  color: #feca57;
-}
-
-.tech-icon.tools:hover {
-  color: #fed976;
-}
-
-.tech-icon.devops {
-  color: #2e86de;
-}
-
-.tech-icon.devops:hover {
-  color: #54a0ff;
-}
-
-.tech-icon.methodology {
-  color: #f39c12;
-}
-
-.tech-icon.methodology:hover {
-  color: #f5b041;
-}
-
-.tech-icon.version {
-  color: #e74c3c;
-}
-
-.tech-icon.version:hover {
-  color: #ff6b6b;
-}
-
-.tech-icon.git {
-  color: #ff7f50;
-}
-
-.tech-icon.git:hover {
-  color: #ff9966;
-}
-
-.tech-icon.linkedin {
-  color: #0077b5;
-}
-
-.tech-icon.linkedin:hover {
-  color: #0099d4;
-}
-
-.tech-icon.github {
-  color: #666;
-}
-
-.tech-icon.github:hover {
-  color: #888;
-}
-
-.tech-icon.resume {
-  color: #e74c3c;
-}
-
-.tech-icon.resume:hover {
-  color: #ff6b6b;
-}
-
-.tech-icon.email {
-  color: #3498db;
-}
-
-.tech-icon.email:hover {
-  color: #5dade2;
-}
-
-.tech-icon.project {
-  color: #9b59b6;
-}
-
-.tech-icon.project:hover {
-  color: #bb77d6;
 }
 
 @media (max-width: 768px) {
@@ -409,12 +301,12 @@ details > summary i.tech-icon {
     text-shadow: 0 0 1px #88ff88;
   }
 
-  .tech-icon {
+  iconify-icon {
     font-size: 0.9em;
     margin-right: 6px;
   }
 
-  .tech-icon:hover {
+  iconify-icon:hover {
     transform: none;
   }
 
