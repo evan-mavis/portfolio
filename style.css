@@ -253,6 +253,11 @@ summary {
   vertical-align: middle;
 }
 
+/* Hide inline tech icons inside folder summaries (folders shouldn't have their own icons) */
+details > summary i.tech-icon {
+  display: none;
+}
+
 .tech-icon:hover {
   color: #44ff44;
   transform: scale(1.05);
@@ -296,6 +301,38 @@ summary {
 
 .tech-icon.tools:hover {
   color: #fed976;
+}
+
+.tech-icon.devops {
+  color: #2e86de;
+}
+
+.tech-icon.devops:hover {
+  color: #54a0ff;
+}
+
+.tech-icon.methodology {
+  color: #f39c12;
+}
+
+.tech-icon.methodology:hover {
+  color: #f5b041;
+}
+
+.tech-icon.version {
+  color: #e74c3c;
+}
+
+.tech-icon.version:hover {
+  color: #ff6b6b;
+}
+
+.tech-icon.git {
+  color: #ff7f50;
+}
+
+.tech-icon.git:hover {
+  color: #ff9966;
 }
 
 .tech-icon.linkedin {
