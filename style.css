@@ -98,9 +98,9 @@ details:not([open]) > summary.main-heading {
 
 .bio__cu-highlight {
   display: inline-block;
-  color: gold;
+  color: #d4af37;
   font-weight: bold;
-  text-shadow: 0 0 6px gold, 0 0 12px gold;
+  text-shadow: 0 0 3px #d4af37, 0 0 6px #d4af37;
 }
 
 a {

@@ -101,8 +101,8 @@ h1 {
 }
 
 h2 > em {
-  color: #eeff00;
-  text-shadow: 0 0 5px #f2ff00;
+  color: #cccc33;
+  text-shadow: 0 0 3px #cccc33;
 }
 
 h3 {
@@ -216,7 +216,7 @@ h3 {
 }
 
 .back-button {
-  color: #c864ff;
+  color: #9966cc;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -224,14 +224,14 @@ h3 {
   z-index: 1000;
   text-decoration: none;
   font-size: 2rem;
-  text-shadow: 0 0 5px #c864ff;
+  text-shadow: 0 0 3px #9966cc;
   transition: all 0.3s ease;
   font-weight: bold;
 }
 
 .back-button:hover {
-  color: #e0a3ff;
-  text-shadow: 0 0 10px #c864ff, 0 0 15px #c864ff;
+  color: #b388d6;
+  text-shadow: 0 0 5px #9966cc, 0 0 8px #9966cc;
 }
 
 @media (max-width: 767px) {
