@@ -386,6 +386,15 @@ iconify-icon:hover {
   transform: scale(1.05);
 }
 
+.chain-icon {
+  color: #ff0000 !important;
+}
+
+.github-icon,
+.betterauth-icon {
+  color: #d3d3d3 !important;
+}
+
 @media (max-width: 768px) {
   body {
     color: #88ff88;
